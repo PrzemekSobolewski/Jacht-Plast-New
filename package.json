@@ -1,0 +1,52 @@
+{
+  "name": "jacht-plast-new",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint \"*/**/*.{js,ts,tsx}\" --quiet",
+    "prettier": "prettier --check ./pages/**/*.{ts,tsx} ./apis/**/*.{ts,tsx} ./components/**/*.{ts,tsx} ./hooks/**/*.{ts,tsx} ./redux/**/*.{ts,tsx} ./styles/**/*.{css,ts} ./models/**/*.{ts,tsx} ./modules/**/*.{ts,tsx} ./config/**/*.{ts,tsx}",
+    "prettier-fix": "prettier --write ./pages/**/*.{ts,tsx} ./apis/**/*.{ts,tsx} ./components/**/*.{ts,tsx} ./hooks/**/*.{ts,tsx} ./redux/**/*.{ts,tsx} ./styles/**/*.{css,ts} ./models/**/*.{ts,tsx} ./modules/**/*.{ts,tsx} ./config/**/*.{ts,tsx}"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PrzemekSobolewski/Jacht-Plast-New.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PrzemekSobolewski/Jacht-Plast-New/issues"
+  },
+  "homepage": "https://github.com/PrzemekSobolewski/Jacht-Plast-New#readme",
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@types/node": "18.11.9",
+    "@types/react": "18.0.25",
+    "@types/react-dom": "18.0.9",
+    "@types/react-headroom": "^3.2.0",
+    "@types/styled-components": "^5.1.26",
+    "@typescript-eslint/eslint-plugin": "^5.35.0",
+    "@typescript-eslint/parser": "^5.54.0",
+    "babel-loader": "^8.2.2",
+    "eslint": "^8.34.0",
+    "eslint-config-next": "13.0.5",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.3",
+    "prettier": "^2.4.1",
+    "typescript": "^5.0.2"
+  },
+  "dependencies": {
+    "next": "^13.2.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-headroom": "^3.2.1",
+    "react-icons": "^4.8.0",
+    "styled-components": "^5.3.6"
+  }
+}
