@@ -1,3 +1,4 @@
+import { screenSizeTo } from "@/styles/breakpoints";
 import { DULL_GRAY, WHITE, YELLOW } from "@/styles/colors";
 import styled from "styled-components";
 
@@ -14,6 +15,13 @@ export const Wrapper = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr;
   min-height: 100%;
   max-width: 100%;
+  ${screenSizeTo("tablet")} {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  ${screenSizeTo("mobile")} {
+    grid-template-columns: 1fr 1fr;
+  }
 `;
 
 export const FooterItem = styled.div`
@@ -29,6 +37,9 @@ export const FooterItem = styled.div`
 
 export const Title = styled.h4`
   margin-bottom: 0px;
+  ${screenSizeTo("bigTablet")} {
+    font-size: 0.9em;
+  }
 `;
 
 export const Border = styled.div`

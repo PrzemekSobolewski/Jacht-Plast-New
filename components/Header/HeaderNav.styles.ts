@@ -1,3 +1,4 @@
+import { screenSizeTo } from "@/styles/breakpoints";
 import { MAIN_BLUE } from "@/styles/colors";
 import styled from "styled-components";
 
@@ -7,6 +8,9 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   & .header-logo {
     margin: 1em 0 1em 6em;
+    ${screenSizeTo("smallDesktop")} {
+      margin: 0.5em 0 0.5em 4em;
+    }
   }
 `;
 
@@ -18,6 +22,7 @@ export const Nav = styled.nav`
   align-items: center;
   gap: 100px;
   font-weight: 500;
+  letter-spacing: 0.5px;
   & a {
     transition: all 0.3s ease;
 
@@ -42,5 +47,12 @@ export const Nav = styled.nav`
         transform-origin: left;
       }
     }
+  }
+
+  ${screenSizeTo("smallDesktop")} {
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+    gap: 64px;
+    margin-right: 64px;
   }
 `;

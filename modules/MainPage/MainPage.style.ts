@@ -1,6 +1,8 @@
+import { screenSizeTo } from "@/styles/breakpoints";
 import {
   BLACK,
   BLACK_OPACITY,
+  DULL_GRAY,
   MAIN_BLUE,
   WHITE,
   YELLOW,
@@ -29,6 +31,11 @@ export const Wrapper = styled.div`
   min-height: 796px;
   margin: 0 0 0 auto;
   padding-top: 67px;
+
+  ${screenSizeTo("mobile")} {
+    width: 100%;
+    padding-top: 100px;
+  }
 `;
 
 export const Separator = styled.div`
@@ -36,6 +43,9 @@ export const Separator = styled.div`
   background-color: ${WHITE};
   margin: 16px 0 0;
   width: 100%;
+  ${screenSizeTo("mobile")} {
+    width: 80%;
+  }
 `;
 
 export const Title = styled.h1`
@@ -44,6 +54,9 @@ export const Title = styled.h1`
   font-size: 4.5rem;
   line-height: 1.1;
   text-align: right;
+  ${screenSizeTo("mobile")} {
+    font-size: 3rem;
+  }
 `;
 
 export const Text = styled.p`
@@ -51,6 +64,9 @@ export const Text = styled.p`
   font-size: 1.25rem;
   letter-spacing: 1px;
   text-align: right;
+  ${screenSizeTo("mobile")} {
+    margin: 30px 0 0 50px;
+  }
 `;
 
 export const Link = styled.a`
@@ -68,6 +84,9 @@ export const Link = styled.a`
   filter: drop-shadow(1px 1px 2px #333);
   cursor: pointer;
   font-size: 1.25rem;
+  ${screenSizeTo("mobile")} {
+    margin: 40px 0 53px auto;
+  }
 `;
 
 export const InfoBoxesWrapper = styled.div`
@@ -79,6 +98,19 @@ export const InfoBoxesWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+
+  ${screenSizeTo("smallDesktop")} {
+    width: 561px;
+  }
+
+  ${screenSizeTo("bigTablet")} {
+    width: 100%;
+    margin-left: auto;
+  }
+
+  ${screenSizeTo("mobile")} {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const InfoBox = styled.div`
@@ -95,10 +127,19 @@ export const InfoIcon = styled.div`
   background-color: ${MAIN_BLUE};
   height: 64px;
   width: 64px;
-  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
   color: ${WHITE};
   margin: 30px auto 0;
+
+  ${screenSizeTo("tablet")} {
+    margin: 24px auto 0;
+    height: 56px;
+    width: 56px;
+    padding: 0;
+  }
 `;
 
 export const InfoTitle = styled.h4`
@@ -107,16 +148,24 @@ export const InfoTitle = styled.h4`
   font-size: 1.5rem;
   line-height: 1.2;
   text-align: center;
+  ${screenSizeTo("tablet")} {
+    font-size: 1.3rem;
+    margin: 24px 24px 0;
+  }
 `;
 
 export const Desc = styled.p`
   font-style: italic;
   margin: 20px 29px 35px;
   text-align: center;
+  ${screenSizeTo("tablet")} {
+    font-size: 0.9rem;
+    margin: 16px 20px 24px;
+  }
 `;
 
 export const WrapperRight = styled.div`
-  width: 437px;
+  width: 490px;
   min-height: 665px;
   position: absolute;
   top: 50%;
@@ -124,6 +173,21 @@ export const WrapperRight = styled.div`
   transform: translateY(-50%);
   text-align: right;
   color: ${BLACK};
+
+  ${screenSizeTo("destkop")} {
+    width: 437px;
+  }
+
+  ${screenSizeTo("smallDesktop")} {
+    width: 350px;
+  }
+
+  ${screenSizeTo("bigTablet")} {
+    position: relative;
+    transform: translateY(0);
+    width: 100%;
+    min-height: auto;
+  }
 `;
 
 export const Subtitle = styled.h2`
@@ -131,6 +195,13 @@ export const Subtitle = styled.h2`
   font-weight: 400;
   font-size: 2.25rem;
   line-height: 1.1;
+  ${screenSizeTo("tablet")} {
+    font-size: 2em;
+  }
+
+  ${screenSizeTo("mobile")} {
+    text-align: center;
+  }
 `;
 
 export const SmallSeparatorRight = styled.div<{ color: string }>`
@@ -138,6 +209,9 @@ export const SmallSeparatorRight = styled.div<{ color: string }>`
   position: relative;
   margin: 37px 0 0 auto;
   border-bottom: 7px solid ${({ color }) => color};
+  ${screenSizeTo("mobile")} {
+    margin: 37px auto 0 auto;
+  }
 `;
 
 export const SmallSeparatorLeft = styled.div<{ color: string }>`
@@ -145,17 +219,29 @@ export const SmallSeparatorLeft = styled.div<{ color: string }>`
   position: relative;
   margin: 37px auto 0 0;
   border-bottom: 7px solid ${({ color }) => color};
+  ${screenSizeTo("mobile")} {
+    margin: 37px auto 0 auto;
+  }
 `;
 
 export const MainDesc = styled.p`
   margin: 35px 0 0 0;
   word-wrap: break-word;
   font-size: 1.2em;
+  ${screenSizeTo("tablet")} {
+    font-size: 1em;
+  }
+  ${screenSizeTo("mobile")} {
+    text-align: center;
+  }
 `;
 
 export const Section = styled.div`
   padding: 100px 0 0;
   color: ${BLACK};
+  ${screenSizeTo("tablet")} {
+    padding: 75px 0 0;
+  }
 `;
 
 export const ColoredSection = styled.section`
@@ -163,6 +249,10 @@ export const ColoredSection = styled.section`
   background-color: ${MAIN_BLUE};
   padding: 80px 0 80px 0;
   color: ${WHITE};
+  ${screenSizeTo("tablet")} {
+    margin: 75px 0 0;
+    padding: 60px 0;
+  }
 `;
 
 export const FlexWrapper = styled.div`
@@ -171,6 +261,10 @@ export const FlexWrapper = styled.div`
   justify-content: center;
   width: 100%;
   gap: 40px;
+
+  ${screenSizeTo("bigTablet")} {
+    flex-direction: column;
+  }
 `;
 
 export const Content = styled.div<{ textAlign: string; color: string }>`
@@ -186,19 +280,43 @@ export const ImageContainer = styled.div`
   min-height: 538px;
   position: relative;
   filter: drop-shadow(1px 1px 3px ${BLACK_OPACITY});
+
+  ${screenSizeTo("smallDesktop")} {
+    min-width: 516px;
+    min-height: 450px;
+  }
+
+  ${screenSizeTo("bigTablet")} {
+    min-width: 100%;
+    min-height: 538px;
+  }
+
+  ${screenSizeTo("tablet")} {
+    min-height: 450px;
+  }
+
+  ${screenSizeTo("mobile")} {
+    min-height: 320px;
+  }
 `;
 
 export const ContactSection = styled.section`
-  background-color: ${YELLOW};
+  background-color: ${DULL_GRAY};
   margin-top: 100px;
   padding: 80px 0;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  color: ${WHITE};
   > h2 {
     margin: 0;
   }
   > a {
     margin: 0;
+  }
+
+  ${screenSizeTo("tablet")} {
+    gap: 32px;
+    flex-direction: column;
   }
 `;

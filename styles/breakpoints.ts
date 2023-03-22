@@ -12,10 +12,12 @@ const getBasePixels = (point?: string) => {
       return 1025;
     case "medium":
       return 1052;
+    case "smallDesktop":
+      return 1200;
     case "desktop":
-      return 1200;
+      return 1300;
     default:
-      return 1200;
+      return 1300;
   }
 };
 const getScreenFromMin = (point: string) => `${getBasePixels(point)}px`;
