@@ -1,23 +1,36 @@
 const getBasePixels = (point?: string) => {
   switch (point) {
+    case "xs":
+      return 320;
+    case "sm": 
+      return 640;
+    case "md":
+      return 768;
+    case "lg":
+      return 1024;
+    case "xl":
+      return 1280;
+    case "2xl":
+      return 1536;
+    // Legacy support
     case "reallySmallMobile":
-      return 350;
+      return 320;
     case "smallMobile":
-      return 380;
+      return 480;
     case "mobile":
-      return 641;
+      return 640;
     case "tablet":
-      return 828;
+      return 768;
     case "bigTablet":
-      return 1025;
+      return 1024;
     case "medium":
-      return 1052;
+      return 1280;
     case "smallDesktop":
-      return 1200;
+      return 1440;
     case "desktop":
-      return 1300;
+      return 1920;
     default:
-      return 1300;
+      return 1920;
   }
 };
 const getScreenFromMin = (point: string) => `${getBasePixels(point)}px`;

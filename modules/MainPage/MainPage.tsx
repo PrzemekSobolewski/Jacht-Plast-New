@@ -1,222 +1,303 @@
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { 
+  FaAnchor, 
+  FaShip, 
+  FaTruck, 
+  FaCog, 
+  FaChevronDown,
+  FaPlay,
+  FaCheck,
+} from "react-icons/fa";
 import {
-  SmallSeparatorRight,
-  Content,
-  Desc,
-  FlexWrapper,
   HeroSection,
-  InfoBox,
-  InfoBoxesWrapper,
-  InfoIcon,
-  InfoTitle,
-  Link,
-  MainDesc,
-  Separator,
-  Subtitle,
-  Text,
-  Title,
-  ColoredSection,
-  Wrapper,
-  WrapperRight,
-  SmallSeparatorLeft,
-  ImageContainer,
-  Section,
+  HeroContent,
+  HeroTitle,
+  HeroSubtitle,
+  HeroDescription,
+  ScrollIndicator,
+  ServicesSection,
+  SectionTitle,
+  SectionSubtitle,
+  ServicesGrid,
+  ServiceCard,
+  ServiceIcon,
+  ServiceTitle,
+  ServiceDescription,
+  AboutSection,
+  AboutContent,
+  AboutText,
+  AboutStats,
+  StatItem,
+  StatNumber,
+  StatLabel,
+  FeaturesList,
+  FeatureItem,
   ContactSection,
+  ContactCard,
+  ContactInfo,
+  MainContainer,
+  VideoSection,
+  VideoContainer,
+  PlayButton,
+  VideoOverlay
 } from "./MainPage.style";
-import { BLACK, MAIN_BLUE, WHITE } from "@/styles/colors";
 import { Container } from "@/components/Container/Container.styles";
-
-import useWindowDimensions from "@/hooks/useWindowDimension";
 import Image from "next/image";
-import logo from "@/public/images/logo.png";
-import transportIcon from "@/public/icons/transport-icon.svg";
-import productionIcon from "@/public/icons/production-icon.svg";
-import repairIcon from "@/public/icons/repair-icon.svg";
-import specialistIcon from "@/public/icons/specialist-icon.svg";
 import ramTransport from "@/public/images/ram-transport.webp";
+import { CTAButton } from "@/components/common/Buttons.styles";
 
 export const MainPage = () => {
-  const { height, width } = useWindowDimensions();
+  const [heroRef, heroInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
-  const handleReadMoreClick = (e: React.MouseEvent<HTMLElement>) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 700,
-      left: 0,
-      behavior: "smooth",
-    });
+  const [servicesRef, servicesInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const [aboutRef, aboutInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const scrollToServices = () => {
+    const servicesElement = document.getElementById('services');
+    if (servicesElement) {
+      servicesElement.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
+  const services = [
+    {
+      icon: <FaShip />,
+      title: "Produkcja Jachtów",
+      description: "Projektowanie i budowa jachtów na indywidualne zamówienie z wykorzystaniem najnowszych technologii kompozytowych."
+    },
+    {
+      icon: <FaTruck />,
+      title: "Transport Jachtów",
+      description: "Profesjonalny transport jachtów po całej Europie z pełnym ubezpieczeniem i najwyższymi standardami bezpieczeństwa."
+    },
+    {
+      icon: <FaCog />,
+      title: "Laminaty FRP",
+      description: "Produkcja wysokiej jakości laminatów z włókna szklanego dla branży morskiej, automotive i przemysłowej."
+    },
+    {
+      icon: <FaAnchor />,
+      title: "Serwis i Naprawa",
+      description: "Kompleksowy serwis, naprawa i modernizacja jachtów oraz elementów kompozytowych."
+    }
+  ];
+
+  const features = [
+    "Doświadczenie od wielu lat w branży nautycznej",
+    "Najwyższa jakość materiałów i wykonania",
+    "Indywidualne podejście do każdego projektu",
+    "Certyfikowane procesy produkcyjne",
+    "Transport z pełnym ubezpieczeniem",
+    "Gwarancja na wszystkie usługi"
+  ];
+
   return (
-    <>
-      <HeroSection>
+    <MainContainer>
+      {/* Hero Section */}
+      <HeroSection ref={heroRef}>
         <Container>
-          <Wrapper>
-            <Image
-              src={logo.src}
-              width={104}
-              height={86}
-              alt={"Logo of Jacht Plast company"}
-            />
-            <Separator />
-            <Title>Jacht Plast</Title>
-            <Text>
-              Twój zaufany partner w transporcie jachtów i łodzi motorowych
-            </Text>
-            <Link onClick={handleReadMoreClick}>czytaj dalej</Link>
-          </Wrapper>
+          <HeroContent>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={heroInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8 }}
+            >
+              <HeroTitle>
+                Jacht Plast
+                <span>Profesjonalna Produkcja i Transport Jachtów</span>
+              </HeroTitle>
+              <HeroSubtitle>
+                Lider w dziedzinie kompozytów nautycznych
+              </HeroSubtitle>
+              <HeroDescription>
+                Specjalizujemy się w produkcji jachtów, transporcie oraz wytwarzaniu 
+                wysokiej jakości laminatów kompozytowych. Działamy z pasją od lat, 
+                łącząc tradycyjne rzemiosło z nowoczesnymi technologiami.
+              </HeroDescription>
+              <CTAButton 
+                as={motion.button}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={scrollToServices}
+              >
+                Poznaj Nasze Usługi
+              </CTAButton>
+            </motion.div>
+          </HeroContent>
+          
+          <ScrollIndicator 
+            as={motion.div}
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            onClick={scrollToServices}
+          >
+            <FaChevronDown />
+          </ScrollIndicator>
         </Container>
       </HeroSection>
-      <section>
+
+      {/* Services Section */}
+      <ServicesSection id="services" ref={servicesRef}>
         <Container>
-          <InfoBoxesWrapper>
-            <InfoBox>
-              <InfoIcon>
-                <Image
-                  src={transportIcon.src}
-                  width={width <= 828 ? 30 : 36}
-                  height={width <= 828 ? 30 : 36}
-                  alt={"Transport specjalistyczny"}
-                />
-              </InfoIcon>
-              <InfoTitle>Transport</InfoTitle>
-              <Desc>
-                Specjalizujemy się w transporcie jachtów i łodzi motorowych na
-                terenie Polski oraz Europy. Nasza flota składa się z
-                niezawodnych ciężarówek oraz specjalistycznych przyczep, dzięki
-                którym jesteśmy w stanie dostarczyć Twój jacht w każde miejsce z
-                zachowaniem najwyższych standardów bezpieczeństwa.
-              </Desc>
-            </InfoBox>
-            <InfoBox>
-              <InfoIcon>
-                <Image
-                  src={productionIcon.src}
-                  width={width <= 828 ? 30 : 36}
-                  height={width <= 828 ? 30 : 36}
-                  alt={"Jacht żaglowy"}
-                />
-              </InfoIcon>
-              <InfoTitle>Produkcja</InfoTitle>
-              <Desc>
-                Od początku naszej działalności stawiamy na doskonałą jakość
-                produktów i usług. Dzięki temu możemy z dumą powiedzieć, że
-                łodzie, które wychodzą spod naszej ręki, są jednymi z
-                najlepszych na rynku. Korzystamy z najlepszych materiałów i
-                technologii, aby zapewnić klientom nie tylko piękny wygląd, ale
-                także niezawodność i bezpieczeństwo podczas żeglugi.
-              </Desc>
-            </InfoBox>
-            <InfoBox>
-              <InfoIcon>
-                <Image
-                  src={repairIcon.src}
-                  width={width <= 828 ? 30 : 36}
-                  height={width <= 828 ? 30 : 36}
-                  alt={"Narzędzia robotnicze"}
-                />
-              </InfoIcon>
-              <InfoTitle>Renowacje</InfoTitle>
-              <Desc>
-                Jeśli masz już swój jacht lub łódź motorową, ale wymaga ona
-                renowacji, to jesteśmy do Twojej dyspozycji. Dzięki naszemu
-                doświadczeniu i wiedzy jesteśmy w stanie przywrócić Twóją łódź
-                do pierwotnego stanu lub dostosować go do Twoich indywidualnych
-                potrzeb. Zajmujemy się nie tylko naprawą i malowaniem, ale także
-                modernizacją i instalacją nowych systemów.
-              </Desc>
-            </InfoBox>
-            <InfoBox>
-              <InfoIcon>
-                <Image
-                  src={specialistIcon.src}
-                  width={width <= 828 ? 30 : 36}
-                  height={width <= 828 ? 30 : 36}
-                  alt={"Wyspecjalizowana kadra pracownicza"}
-                />
-              </InfoIcon>
-              <InfoTitle>Doświadczona Załoga</InfoTitle>
-              <Desc>
-                Nasi klienci cenią nas przede wszystkim za profesjonalne
-                podejście do każdego zlecenia oraz indywidualne podejście do
-                potrzeb klienta. Jesteśmy elastyczni i gotowi do dostosowania
-                się do wymagań nawet najbardziej wymagających klientów.
-              </Desc>
-            </InfoBox>
-          </InfoBoxesWrapper>
-          <WrapperRight>
-            <Content textAlign="right" color={BLACK}>
-              <Subtitle>
-                Specjalizujemy się w<br />
-                <strong>produkcji i transporcie łodzi</strong>
-              </Subtitle>
-              <SmallSeparatorRight color={MAIN_BLUE} />
-              <MainDesc>
-                Jesteśmy doświadczoną i dynamicznie rozwijającą się firmą.
-                Łodzie naszej produkcji to połączenie najnowszych technologii
-                oraz ręcznej pracy najlepszych specjalistów w branży. Dzięki
-                temu nasze jednostki charakteryzują się nie tylko wyjątkową
-                estetyką, ale także doskonałymi właściwościami pływackimi oraz
-                niezawodnością.
-              </MainDesc>
-            </Content>
-          </WrapperRight>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={servicesInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+          >
+            <SectionTitle>Nasze Specjalizacje</SectionTitle>
+            <SectionSubtitle>
+              Kompleksowe usługi w branży nautycznej i kompozytowej
+            </SectionSubtitle>
+          </motion.div>
+
+          <ServicesGrid>
+            {services.map((service, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                animate={servicesInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <ServiceCard
+                  as={motion.div}
+                  whileHover={{ y: -5, scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <ServiceIcon>{service.icon}</ServiceIcon>
+                  <ServiceTitle>{service.title}</ServiceTitle>
+                  <ServiceDescription>{service.description}</ServiceDescription>
+                </ServiceCard>
+              </motion.div>
+            ))}
+          </ServicesGrid>
         </Container>
-      </section>
-      <ColoredSection>
+      </ServicesSection>
+
+      {/* About Section */}
+      <AboutSection ref={aboutRef}>
         <Container>
-          <FlexWrapper>
-            <Content textAlign="left" color={WHITE}>
-              <Subtitle>Nie ma dla nas rzeczy niemożliwych!</Subtitle>
-              <SmallSeparatorLeft color={WHITE} />
-              <MainDesc>
-                Oferujemy kompleksową obsługę transportu jachtów oraz łodzi
-                motorowych, w tym przygotowanie do transportu (odłączenie
-                masztu, zabezpieczenie pokładu i wyposażenia), organizację
-                odpowiednich dokumentów i formalności celnych oraz bezpłatną
-                wycenę transportu.
-              </MainDesc>
-            </Content>
-            <ImageContainer>
-              <Image
-                src={ramTransport.src}
-                fill={true}
-                alt="transport jachtu wyjazd w siedziby firmy Jacht Plast"
-              />
-            </ImageContainer>
-          </FlexWrapper>
+          <AboutContent>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={aboutInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8 }}
+            >
+              <SectionTitle>O Firmie Jacht Plast</SectionTitle>
+              <AboutText>
+                <strong>PHUP Jacht-Plast</strong> to firma z wieloletnim doświadczeniem w branży 
+                nautycznej, specjalizująca się w produkcji jachtów oraz elementów kompozytowych. 
+                Nasze zaangażowanie w jakość i innowacje sprawia, że jesteśmy zaufanym partnerem 
+                dla klientów z całej Europy.
+              </AboutText>
+              
+              <FeaturesList>
+                {features.map((feature, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={aboutInView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                  >
+                    <FeatureItem>
+                      <FaCheck />
+                      {feature}
+                    </FeatureItem>
+                  </motion.div>
+                ))}
+              </FeaturesList>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={aboutInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <AboutStats>
+                <StatItem>
+                  <StatNumber>15+</StatNumber>
+                  <StatLabel>Lat Doświadczenia</StatLabel>
+                </StatItem>
+                <StatItem>
+                  <StatNumber>500+</StatNumber>
+                  <StatLabel>Zrealizowanych Projektów</StatLabel>
+                </StatItem>
+                <StatItem>
+                  <StatNumber>100%</StatNumber>
+                  <StatLabel>Zadowolonych Klientów</StatLabel>
+                </StatItem>
+              </AboutStats>
+
+              <VideoSection>
+                <VideoContainer>
+                  <Image
+                    src={ramTransport}
+                    alt="Transport jachtów - Jacht Plast"
+                    fill
+                    style={{ objectFit: 'cover' }}
+                    priority={false}
+                    loading="lazy"
+                    placeholder="blur"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+                  />
+                  <VideoOverlay>
+                    <PlayButton
+                      as={motion.button}
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      <FaPlay />
+                    </PlayButton>
+                  </VideoOverlay>
+                </VideoContainer>
+              </VideoSection>
+            </motion.div>
+          </AboutContent>
         </Container>
-      </ColoredSection>
-      <Section>
-        <Container>
-          <FlexWrapper>
-            <ImageContainer>
-              <Image
-                src={ramTransport.src}
-                fill={true}
-                alt="transport jachtu wyjazd w siedziby firmy Jacht Plast"
-              />
-            </ImageContainer>
-            <Content textAlign="right" color={BLACK}>
-              <Subtitle>
-                Szukasz niezawodnej firmy zajmującej się{" "}
-                <strong>przewozem jachtów?</strong>
-              </Subtitle>
-              <SmallSeparatorRight color={MAIN_BLUE} />
-              <MainDesc>
-                Skontaktuj się z nami już dziś. Zaufaj naszej wiedzy i
-                doświadczeniu, a my zadbamy o to, aby Twoja łódź dotarła na
-                miejsce szybko, bezpiecznie i w najlepszej kondycji. Jesteśmy
-                Twoim najlepszym wyborem w transporcie jachtów na terenie Polski
-                i Europy.
-              </MainDesc>
-            </Content>
-          </FlexWrapper>
-        </Container>
-      </Section>
+      </AboutSection>
+
+      {/* Contact Section */}
       <ContactSection>
-        <Subtitle>Śmiało, napisz do nas!</Subtitle>
-        <Link href="mailto:jachtplast@gmail.com">jachtplast@gmail.com</Link>
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <SectionTitle style={{ color: 'white' }}>
+              Skontaktuj się z Nami
+            </SectionTitle>
+            <SectionSubtitle style={{ color: '#E8F4F8' }}>
+              Jesteśmy gotowi pomóc w realizacji Twojego projektu
+            </SectionSubtitle>
+
+            <ContactCard>
+              <ContactInfo>
+                <h3>Zapraszamy do Kontaktu</h3>
+                <p>
+                  Nasz zespół ekspertów jest gotowy odpowiedzieć na Twoje pytania 
+                  i pomóc w realizacji nawet najbardziej wymagających projektów.
+                </p>
+                <ul>
+                  <li><strong>Telefon:</strong> +48 601 256 133</li>
+                  <li><strong>Email:</strong> jachtplast@gmail.com</li>
+                  <li><strong>Adres:</strong> ul. Przemysłowa 4, 26-340 Drzewica</li>
+                </ul>
+              </ContactInfo>
+            </ContactCard>
+          </motion.div>
+        </Container>
       </ContactSection>
-    </>
+    </MainContainer>
   );
 };

@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://jacht-plast.pl/sitemap.xml
+
+# Disallow crawling of admin areas
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /api/
+
+# Allow crawling of all pages
+Allow: /
+Allow: /produkcja-jachtow
+Allow: /transport-jachtow
+Allow: /laminaty
+Allow: /kontakt
