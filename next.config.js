@@ -43,7 +43,18 @@ module.exports = {
         ],
       },
     ]
-  }
+  },
+  exportPathMap: function (
+        defaultPathMap, {dev, dir, outDir, distDir, buildId}
+    ) {
+        return {
+            '/': {page: '/'},
+            '/produkcja-jachtow.html': {page: '/produkcja-jachtow'},
+            '/transport-jachtow.html': {page: '/transport-jachtow'},
+            '/kontakt.html': {page: '/kontakt'},
+            '/laminaty.html': {page: '/laminaty'}
+        }
+    },
 }
 
 module.exports = withBundleAnalyzer(nextConfig);

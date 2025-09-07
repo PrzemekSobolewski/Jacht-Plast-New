@@ -33,7 +33,7 @@ export const HeroSection = styled.section`
 export const HeroContent = styled.div`
   position: relative;
   z-index: 2;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
 

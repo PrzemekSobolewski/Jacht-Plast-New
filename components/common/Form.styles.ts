@@ -176,6 +176,10 @@ export const FormButton = styled.button<{ disabled?: boolean }>`
   transition: all 0.3s ease;
   box-shadow: ${props => props.disabled ? 'none' : '0 8px 25px rgba(43, 155, 186, 0.3)'};
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   
   &:hover:not(:disabled) {
     transform: translateY(-2px);

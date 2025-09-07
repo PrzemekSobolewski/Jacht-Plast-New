@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useGoogleAnalytics } from "@/hooks/useGoogleAnalytics";
 import { 
   FaTruck, 
   FaShieldAlt, 
@@ -84,6 +85,7 @@ const transportImages = [
 ];
 
 const TransportJachtowComponent = () => {
+  const { trackEvent } = useGoogleAnalytics();
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
 
@@ -106,6 +108,7 @@ const TransportJachtowComponent = () => {
     setCurrentImage(index);
     setLightboxOpen(true);
     document.body.style.overflow = 'hidden';
+    trackEvent('gallery_image_view', 'Transport Gallery', `Image ${index + 1}`);
   };
 
   const closeLightbox = () => {

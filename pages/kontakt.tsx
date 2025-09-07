@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Head from "next/head";
+import { useGoogleAnalytics } from "@/hooks/useGoogleAnalytics";
 import { 
   FaPhone, 
   FaEnvelope, 
@@ -47,6 +48,8 @@ import {
 } from "@/modules/ContactPage/ContactPage.styles";
 
 export default function Kontakt() {
+  const { trackContactForm, trackPhoneClick, trackEmailClick } = useGoogleAnalytics();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -87,6 +90,7 @@ export default function Kontakt() {
 
       if (response.ok) {
         setSubmitStatus('success');
+        trackContactForm(); // Track successful form submission
         setFormData({
           name: '',
           email: '',
@@ -104,6 +108,18 @@ export default function Kontakt() {
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    void handleSubmit(e);
+  };
+
+  const handlePhoneClick = () => {
+    trackPhoneClick();
+  };
+
+  const handleEmailClick = () => {
+    trackEmailClick();
   };
 
   const structuredData = {
@@ -244,8 +260,8 @@ export default function Kontakt() {
                   </InfoIcon>
                   <InfoTitle>Telefon</InfoTitle>
                   <InfoText>
-                    <a href="tel:+48375673">+48 375 67 35</a><br />
-                    <a href="tel:+48601256133">+48 601 256 133</a>
+                    <a href="tel:+48375673" onClick={handlePhoneClick}>+48 375 67 35</a><br />
+                    <a href="tel:+48601256133" onClick={handlePhoneClick}>+48 601 256 133</a>
                   </InfoText>
                 </InfoCard>
               </motion.div>
@@ -261,7 +277,7 @@ export default function Kontakt() {
                   </InfoIcon>
                   <InfoTitle>Email</InfoTitle>
                   <InfoText>
-                    <a href="mailto:jachtplast@gmail.com">
+                    <a href="mailto:jachtplast@gmail.com" onClick={handleEmailClick}>
                       jachtplast@gmail.com
                     </a>
                   </InfoText>
@@ -325,7 +341,7 @@ export default function Kontakt() {
               animate={formInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <ContactForm onSubmit={handleSubmit}>
+              <ContactForm onSubmit={handleFormSubmit}>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px' }}>
                   <FormGroup>
                     <FormLabel htmlFor="name">

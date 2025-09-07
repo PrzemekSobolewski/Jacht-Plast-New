@@ -11,6 +11,12 @@ export interface YachtModelData {
     fuel?: string;
     water?: string;
     berths?: string;
+    ballast?: string;
+    cabinHeight?: string;
+    sails?: string;
+    category?: string;
+    wasteWater?: string;
+    capacity?: string;
   };
   features: string[];
   images: string[];

@@ -22,7 +22,7 @@ const YachtModelCard: React.FC<YachtModelCardProps> = ({
   const modelRef = useRef(null);
   const isModelInView = useInView(modelRef, { 
     once: true, 
-    margin: "-200px",
+    margin: "-100px",
     amount: "some"
   });
 
@@ -34,7 +34,13 @@ const YachtModelCard: React.FC<YachtModelCardProps> = ({
     engine: 'Silnik',
     fuel: 'Paliwo',
     water: 'Woda słodka',
-    berths: 'Miejsca noclegowe'
+    berths: 'Miejsca noclegowe',
+    capacity: 'Liczba osób na pokładzie',
+    cabinHeight: 'Wysokość kabiny',
+    category: 'Kategoria projektowa',
+    wasteWater: 'Zbiornik fekaliów',
+    sails: 'Żagle',
+    ballast: 'Balast',
   };
 
   return (
@@ -73,7 +79,7 @@ const YachtModelCard: React.FC<YachtModelCardProps> = ({
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={isModelInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.5, delay: index * 0.2 + 0.2 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
             >
               <S.ModelGallery>
                 <motion.div
@@ -94,7 +100,7 @@ const YachtModelCard: React.FC<YachtModelCardProps> = ({
                       <motion.div
                         initial={{ opacity: 0 }}
                         animate={isModelInView ? { opacity: 1 } : { opacity: 0 }}
-                        transition={{ delay: index * 0.2 + 0.2 }}
+                        transition={{ delay: 0.4 }}
                       >
                         <S.ImageCount>
                           +{model.images.length - 1} zdjęć
@@ -112,7 +118,7 @@ const YachtModelCard: React.FC<YachtModelCardProps> = ({
                       animate={isModelInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                       transition={{ 
                         duration: 0.3, 
-                        delay: index * 0.2 + 0.2 + (imgIndex * 0.1) 
+                        delay: 0.5 + (imgIndex * 0.1) 
                       }}
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
@@ -136,7 +142,7 @@ const YachtModelCard: React.FC<YachtModelCardProps> = ({
                       animate={isModelInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                       transition={{ 
                         duration: 0.4, 
-                        delay: index * 0.2 + 0.2 
+                        delay: 0.7 
                       }}
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
@@ -157,13 +163,13 @@ const YachtModelCard: React.FC<YachtModelCardProps> = ({
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isModelInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.4, delay: index * 0.2 + 0.3 }}
+            transition={{ duration: 0.4, delay: 0.6 }}
           >
             <S.ModelDetails>
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={isModelInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                transition={{ duration: 0.3, delay: index * 0.2 + 0.6 }}
+                transition={{ duration: 0.3, delay: 0.6 }}
                 whileHover={{ scale: 1.02, y: -5 }}
               >
                 <S.SpecificationsCard>
@@ -177,7 +183,7 @@ const YachtModelCard: React.FC<YachtModelCardProps> = ({
                           animate={isModelInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -15 }}
                           transition={{ 
                             duration: 0.3, 
-                            delay: index * 0.2 + 0.6 + (specIndex * 0.05) 
+                            delay: 0.8 + (specIndex * 0.05) 
                           }}
                         >
                           <S.SpecItem>
@@ -194,7 +200,7 @@ const YachtModelCard: React.FC<YachtModelCardProps> = ({
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={isModelInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
-                transition={{ duration: 0.5, delay: index * 0.2 + 0.6 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
                 whileHover={{ scale: 1.02, y: -5 }}
               >
                 <S.FeaturesCard>
@@ -207,7 +213,7 @@ const YachtModelCard: React.FC<YachtModelCardProps> = ({
                         animate={isModelInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                         transition={{ 
                           duration: 0.3, 
-                          delay: index * 0.2 + 0.6 + (featureIndex * 0.1) 
+                          delay: 0.8 + (featureIndex * 0.1) 
                         }}
                         whileHover={{ scale: 1.05, x: 10 }}
                       >
@@ -229,7 +235,7 @@ const YachtModelCard: React.FC<YachtModelCardProps> = ({
           <motion.div
             initial={{ opacity: 0, scaleX: 0 }}
             animate={isModelInView ? { opacity: 1, scaleX: 1 } : { opacity: 0, scaleX: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.2 + 1.2 }}
+            transition={{ duration: 0.6, delay: 1.2 }}
           >
             <S.ModelDivider />
           </motion.div>

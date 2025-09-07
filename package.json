@@ -7,10 +7,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "export": "next export",
     "analyze": "ANALYZE=true npm run build",
     "lint": "eslint \"*/**/*.{js,ts,tsx}\" --quiet",
     "prettier": "prettier --check ./pages/**/*.{ts,tsx} ./apis/**/*.{ts,tsx} ./components/**/*.{ts,tsx} ./hooks/**/*.{ts,tsx} ./redux/**/*.{ts,tsx} ./styles/**/*.{css,ts} ./models/**/*.{ts,tsx} ./modules/**/*.{ts,tsx} ./config/**/*.{ts,tsx}",
-    "prettier-fix": "prettier --write ./pages/**/*.{ts,tsx} ./apis/**/*.{ts,tsx} ./components/**/*.{ts,tsx} ./hooks/**/*.{ts,tsx} ./redux/**/*.{ts,tsx} ./styles/**/*.{css,ts} ./models/**/*.{ts,tsx} ./modules/**/*.{ts,tsx} ./config/**/*.{ts,tsx}"
+    "prettier-fix": "prettier --write ./pages/**/*.{ts,tsx} ./apis/**/*.{ts,tsx} ./components/**/*.{ts,tsx} ./hooks/**/*.{ts,tsx} ./redux/**/*.{ts,tsx} ./styles/**/*.{css,ts} ./models/**/*.{ts,tsx} ./modules/**/*.{ts,tsx} ./config/**/*.{ts,tsx}",
+    "deploy": "npm run build && npm run export"
   },
   "repository": {
     "type": "git",

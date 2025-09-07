@@ -42,6 +42,10 @@ export default class MyDocument extends Document {
           <link rel="preload" href="/images/logo.png" as="image" type="image/png" />
           <link rel="dns-prefetch" href="//fonts.googleapis.com" />
           <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+          {/* Google Analytics DNS prefetch */}
+          <link rel="dns-prefetch" href="//www.google-analytics.com" />
+          <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+          <link rel="dns-prefetch" href="//googleads.g.doubleclick.net" />
         </Head>
         <body>
           <Main />

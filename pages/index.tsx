@@ -74,8 +74,8 @@ export default function Home() {
         <link rel="canonical" href="https://jacht-plast.pl" />
         
         {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" href="/icon.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/icon.png" />
         
         {/* Structured Data */}
         <script

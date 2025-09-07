@@ -23,8 +23,21 @@ export const HeroSection = styled.section`
   display: flex;
   align-items: center;
   color: ${WHITE};
+  overflow: hidden;
   
   &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/images/ram-transport.webp') center/cover;
+    opacity: 0.1;
+    z-index: 1;
+  }
+  
+  &::after {
     content: '';
     position: absolute;
     top: 0;
@@ -35,6 +48,7 @@ export const HeroSection = styled.section`
     background-size: 200px 50px;
     background-repeat: repeat-x;
     animation: wave 10s linear infinite;
+    z-index: 2;
   }
   
   @keyframes wave {
@@ -45,7 +59,7 @@ export const HeroSection = styled.section`
 
 export const HeroContent = styled.div`
   position: relative;
-  z-index: 2;
+  z-index: 3;
   max-width: 700px;
   
   ${screenSizeTo("md")} {
@@ -90,13 +104,13 @@ export const HeroDescription = styled.p`
 
 export const ScrollIndicator = styled.div`
   position: absolute;
-  bottom: 30px;
+  bottom: 55px;
   left: 50%;
   transform: translateX(-50%);
   color: ${LIGHT_BLUE};
   font-size: 24px;
   cursor: pointer;
-  z-index: 2;
+  z-index: 3;
   
   &:hover {
     color: ${WHITE};

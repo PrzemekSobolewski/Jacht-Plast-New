@@ -9,3 +9,6 @@ export * from './Gallery.styles';
 
 // Form Components
 export * from './Form.styles';
+
+// Google Analytics
+export * from './GoogleAnalytics';

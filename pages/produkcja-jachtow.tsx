@@ -103,24 +103,22 @@ const yachtModels: YachtModelData[] = [
   {
     name: "NAVIA",
     folder: "navia",
-    description: "Elegancki jacht motorowy zaprojektowany z myślą o komforcie i stylu. NAVIA łączy w sobie nowoczesne rozwiązania techniczne z klasyczną estetyką, oferując wyjątkowe doświadczenia na wodzie.",
+    description: "Sportowa łódź motorowa z 2009 roku z napędem strumieniowym Scott i silnikiem Volvo Penta. NAVIA oferuje duży pokład dla 10 osób oraz komfortową kabinę z łóżkiem dla 3-4 osób.",
     specifications: {
-      length: "10.5 m",
-      beam: "3.2 m",
-      draft: "0.9 m",
-      displacement: "4.5 t",
-      engine: "2 x 150 KM",
-      fuel: "800 l",
-      water: "200 l",
-      berths: "6+2"
+      length: "7.5 m",
+      beam: "2.99 m",
+      draft: "0.3 m",
+      berths: "3-4",
+      capacity: "10 osób"
     },
     features: [
-      "Dwusilnikowy napęd diesla",
-      "Przestronny kokpit z teak-deckiem",
-      "Klimatyzacja w całej jednostce",
-      "Nowoczesny system nawigacji",
-      "Pełne wyposażenie kuchni",
-      "Luksusowe wykończenia wnętrza"
+      "Trymklapy dla optymalnej pracy kadłuba",
+      "Głębokościomierz i temperatura wody Raymarine",
+      "Duży pokład na 10 osób",
+      "Komfortowa kabina z łóżkiem dla 3-4 osób",
+      "Kompaktowe wymiary: 7.5m x 2.99m",
+      "Sportowy charakter łodzi motorowej",
+      "Doskonała do rekreacji wodnej"
     ],
     images: [],
     imageNames: [
@@ -140,24 +138,29 @@ const yachtModels: YachtModelData[] = [
   {
     name: "LAGUNA 700 Cruiser",
     folder: "laguna",
-    description: "Wszechstronny cruiser idealny do długich rejsów i eksplloracji. LAGUNA 700 oferuje doskonałe właściwości morskie oraz komfortowe warunki życia na pokładzie.",
+    description: "Kompaktowy cruiser o długości 7 metrów, idealny do żeglugi przybrzeżnej i wypraw weekendowych. LAGUNA 700 oferuje doskonałe proporcje i komfortowe warunki dla załogi 5-6 osób.",
     specifications: {
-      length: "21.3 m",
-      beam: "5.5 m",
-      draft: "1.4 m",
-      displacement: "18 t",
-      engine: "2 x 435 KM",
-      fuel: "2000 l",
-      water: "600 l",
-      berths: "8+2"
+      length: "7.00 m",
+      beam: "2.49 m",
+      draft: "0.40 m",
+      engine: "8 - 30 KM",
+      berths: "5-6",
+      cabinHeight: "2.00 m",
+      category: "C lub B"
     },
     features: [
-      "Flybridge z jacuzzi",
-      "Salon z panoramicznymi oknami",
-      "VIP kabina właściciela",
-      "Profesjonalne wyposażenie kuchni",
-      "System stabilizacji Zero Speed",
-      "Platforma kąpielowa hydrauliczna"
+      "Kompaktowe wymiary - długość 7m, szerokość 2.49m",
+      "Płytkie zanurzenie 0.40m - dostęp do płytkich akwenów",
+      "Wysoka kabina 2.00m zapewniająca komfort",
+      "Elastyczna moc silnika 8-30 KM",
+      "Miejsce dla 5-6 osób na pokładzie",
+      "Kategoria projektowa C lub B",
+      "Idealne proporcje dla cruisingu",
+      "Doskonałe właściwości morskie",
+      "Komfortowe warunki na pokładzie",
+      "Wszechstronne zastosowanie",
+      "Łatwość manewrowania",
+      "Ekonomiczne zużycie paliwa"
     ],
     images: [],
     imageNames: [
@@ -175,24 +178,28 @@ const yachtModels: YachtModelData[] = [
   {
     name: "NAVIGATHOR 30",
     folder: "navigathor",
-    description: "Sportowy cruiser łączący osiągi z elegancją. NAVIGATHOR 30 to doskonały wybór dla miłośników dynamicznej żeglugi bez kompromisów w kwestii komfortu.",
+    description: "Nowoczesny cruiser motorowy zaprojektowany z myślą o komforcie i funkcjonalności. NAVIGATHOR 30 oferuje dwie zamykane sypialnie i wysoką kabinę dla załogi 6 osób.",
     specifications: {
-      length: "9.2 m",
-      beam: "2.9 m",
-      draft: "0.8 m",
-      displacement: "3.2 t",
-      engine: "1 x 250 KM",
-      fuel: "400 l",
-      water: "120 l",
-      berths: "4+2"
+      length: "8.4 m",
+      beam: "3.2 m",
+      draft: "0.6 m",
+      engine: "30 KM",
+      berths: "4+2",
+      cabinHeight: "2.0 m"
     },
     features: [
-      "Sportowy design hull",
-      "Składany hardtop",
-      "Ergonomiczny kokpit",
-      "Kompaktowa kabina z pełnym wyposażeniem",
-      "System audio Bose",
-      "LED oświetlenie podwodne"
+      "Nowoczesny cruiser motorowy dla 6 osób",
+      "Dwie zamykane sypialnie dla prywatności",
+      "Wysoka kabina 2.0m zapewniająca komfort",
+      "Silnik 30 KM o optymalnej mocy",
+      "Głębinowy ster z kołem sterowym",
+      "Układ koi 4+2 dla różnych potrzeb",
+      "Płytkie zanurzenie 0.6m",
+      "Szeroka konstrukcja 3.2m dla stabilności",
+      "Doskonałe warunki bytowe",
+      "Funkcjonalne rozplanowanie wnętrza",
+      "Łatwość obsługi i manewrowania",
+      "Idealne do cruisingu przybrzeżnego"
     ],
     images: [],
     imageNames: [
@@ -210,24 +217,29 @@ const yachtModels: YachtModelData[] = [
   {
     name: "TES 393 ILLUMINATUS",
     folder: "illuminatis",
-    description: "Luksusowy jacht oceaniczny zaprojektowany dla najbardziej wymagających armatorów. ILLUMINATUS to połączenie najwyższej jakości wykonania z przełomowymi rozwiązaniami technicznymi.",
+    description: "Luksusowy jacht motorowy o imponujących rozmiarach, zaprojektowany dla najbardziej wymagających armatorów. ILLUMINATUS oferuje przestronne wnętrze z trzema zamykanymi sypialniami i najwyższą jakość wykończenia dla załogi 7 osób.",
     specifications: {
-      length: "39.3 m",
-      beam: "8.2 m",
-      draft: "2.8 m",
-      displacement: "185 t",
-      engine: "2 x 1800 KM",
-      fuel: "15000 l",
-      water: "2000 l",
-      berths: "12+6"
+      length: "12.22 m",
+      beam: "3.4 m",
+      draft: "0.8 / 1.0 m",
+      fuel: "330 l",
+      water: "440 l",
+      berths: "6+1",
+      cabinHeight: "1.9 m",
+      wasteWater: "560 l"
     },
     features: [
-      "Helipad na górnym pokładzie",
-      "Spa z sauną i hammam",
-      "Wine cellar z klimatyzacją",
-      "Kino domowe z systemem 7.1",
-      "Beach club z barM",
-      "Garage dla tender 8m"
+      "Luksusowy jacht motorowy o imponujących rozmiarach",
+      "Trzy zamykane sypialnie dla maksymalnego komfortu",
+      "Przestronne wnętrze z wysokością kabiny 1.9m",
+      "Głębinowy ster z kołem sterowym",
+      "Duże zbiorniki: woda 440l, paliwo 330l",
+      "Zbiornik fekaliów 560l dla długich rejsów",
+      "Optymalne zanurzenie 0.8-1.0m",
+      "Układ koi 6+1 dla załogi 7 osób",
+      "Najwyższa jakość wykończenia",
+      "Doskonałe warunki bytowe",
+      "Idealne proporcje długości do szerokości"
     ],
     images: [],
     imageNames: [
@@ -245,24 +257,27 @@ const yachtModels: YachtModelData[] = [
   {
     name: "TES 32 DREAMER",
     folder: "dreamer",
-    description: "Kompaktowy ale luksusowy cruiser idealny dla weekendowych escapad. DREAMER oferuje wszystkie udogodnienia większych jachtów w przystępnej formie.",
+    description: "Przestronny jacht żaglowy z obrotowym mieczem, oferujący komfortowe warunki dla załogi 10 osób. DREAMER łączy w sobie funkcjonalność żaglówki z wygodą trzech zamykanych sypialni.",
     specifications: {
-      length: "10.8 m",
-      beam: "3.4 m",
-      draft: "1.1 m",
-      displacement: "6.2 t",
-      engine: "2 x 200 KM",
-      fuel: "600 l",
-      water: "180 l",
-      berths: "6"
+      length: "9.69 m",
+      beam: "2.98 m",
+      draft: "0.46 / 1.65 m",
+      berths: "8+2",
+      cabinHeight: "1.9 m",
+      sails: "39 m²"
     },
     features: [
-      "Retractable sunroof",
-      "Outdoor galley na kokpicie",
-      "Master cabin z en-suite",
-      "Elektryczne windy kotwiczne",
-      "Wodoodporny system audio",
-      "Podświetlane schodki"
+      "Przestronny jacht żaglowy dla 10 osób",
+      "Trzy zamykane sypialnie dla maksymalnego komfortu",
+      "Obrotowy miecz dla lepszej manewrowości",
+      "Głębinowy ster z kołem sterowym",
+      "Wysokość kabiny 1.9m zapewniająca komfort",
+      "Powierzchnia żagli 39 m² dla doskonałych osiągów",
+      "Układ koi 8+2 dla dużej załogi",
+      "Zanurzenie zmienne 0.46-1.65m",
+      "Optymalne proporcje kadłuba",
+      "Doskonałe warunki bytowe",
+      "Funkcjonalność żaglówki z komfortem jachtu"
     ],
     images: [],
     imageNames: [
@@ -276,24 +291,32 @@ const yachtModels: YachtModelData[] = [
   {
     name: "TES 28 MAGNAM",
     folder: "magnam",
-    description: "Sportowy day cruiser zaprojektowany dla maksymalnej przyjemności z żeglugi. MAGNAM to idealne połączenie wydajności i stylu.",
+    description: "Elegancki jacht żaglowy łączący klasyczną linię kadłuba z nowoczesnym wykonaniem. MAGNAM oferuje wysmakowane wnętrze, doskonałe warunki bytowe i przyjemność żeglowania dla załogi 2-8 osób w zależności od wersji.",
     specifications: {
-      length: "8.6 m",
-      beam: "2.7 m",
-      draft: "0.7 m",
-      displacement: "2.8 t",
-      engine: "1 x 300 KM",
-      fuel: "350 l",
-      water: "80 l",
-      berths: "4"
+      length: "8.18 m",
+      beam: "2.98 m",
+      draft: "0.46 / 1.63 m",
+      displacement: "od 3500 kg",
+      engine: "max 22,1 kW",
+      ballast: "880 / 120 kg",
+      berths: "6+1",
+      cabinHeight: "1.87 m",
+      sails: "21.3 / 14.5 m²",
+      category: "B"
     },
     features: [
-      "Carbon fiber akcenty",
-      "Sportowe fotele z podgrzewaniem",
-      "Premium sound system",
-      "Składane siedzenia słoneczne",
-      "Quickshift transmission",
-      "RGB ambient lighting"
+      "Klasyczna linia kadłuba w nowoczesnym wykonaniu",
+      "Przestronny salon z dobrze wyposażonym kambuzem",
+      "Dwie zamykane kabiny: dziobowa i rufowa",
+      "Duża kabina sanitarna z WC i prysznicem",
+      "Ergonomiczny kokpit z wysokimi oparciami",
+      "Zamykana platforma rufowa dla bezpieczeństwa",
+      "Doskonała wentylacja całego jachtu",
+      "Łatwy dostęp do osprzętu pokładowego",
+      "Duża ilość schowków i miejsca do przechowywania",
+      "Dostępny w wersjach: mieczowej, falszkilowej i kilowej",
+      "Kategoria projektowa B lub C",
+      "Optymalizowany dla 2-4 osób (wersja armatorska) lub 6-8 osób (czarter)"
     ],
     images: [],
     imageNames: [
@@ -312,24 +335,33 @@ const yachtModels: YachtModelData[] = [
   {
     name: "TES 246 VERSUS",
     folder: "versus",
-    description: "Nowoczesny family cruiser zaprojektowany z myślą o bezpieczeństwie i komforcie całej rodziny. VERSUS to idealny wybór na family adventures.",
+    description: "Kompaktowy jacht żaglowy idealny do transportu i łatwego prowadzenia. VERSUS łączy w sobie bezpieczeństwo, doskonałe parametry nautyczne i luksusowe wykończenie, oferując wygodne warunki dla załogi 5-6 osób.",
     specifications: {
-      length: "7.5 m",
-      beam: "2.5 m",
-      draft: "0.6 m",
-      displacement: "2.1 t",
-      engine: "1 x 200 KM",
-      fuel: "250 l",
-      water: "60 l",
-      berths: "4"
+      length: "7.50 m",
+      beam: "2.54 m",
+      draft: "0.35 / 1.51 m",
+      displacement: "2460 kg",
+      engine: "max 14.7 kW",
+      ballast: "500 / 120 kg",
+      berths: "5-6",
+      cabinHeight: "1.85 m",
+      sails: "20.5 / 13.2 m²",
+      category: "B / C"
     },
     features: [
-      "Bezpieczne poręcze dla dzieci",
-      "Antypoślizgowa powierzchnia",
-      "Shower na platformie kąpielowej",
-      "Lodówka z zamrażarką",
-      "GPS z funkcją SOS",
-      "Kanopy bimini"
+      "Idealny do transportu - szerokość 2.49m bez specjalnych zezwoleń",
+      "Łatwy w prowadzeniu nawet przez jedną osobę",
+      "Dynamiczny i bezpieczny w żegludze",
+      "Doskonałe parametry nautyczne",
+      "Odwrócona dziobnica zapewniająca stabilność",
+      "Doskonała widoczność z kokpitu",
+      "Przestronna kabina sanitarna z WC i prysznicem",
+      "Ergonomiczna kuchnia",
+      "Luksusowo wykończone przestronne wnętrze",
+      "Wygodne pełnowymiarowe koje",
+      "Duża ilość miejsca do przechowywania",
+      "Dostępny w wersjach: mieczowej, falszkilowej i kilowej",
+      "Kategoria projektowa B lub C w zależności od balastowania"
     ],
     images: [],
     imageNames: [
@@ -346,24 +378,34 @@ const yachtModels: YachtModelData[] = [
   {
     name: "TES 678 BT-TES 720",
     folder: "bt_tes",
-    description: "Flagowy model łączący tradycyjne rzemiosło z najnowszymi technologiami. BT-TES 720 to szczyt inżynierii morskiej w ofercie stoczni.",
+    description: "Kompaktowy jacht żaglowy o klasycznej linii kadłuba z doskonałymi parametrami nautycznymi. Dostępny w dwóch wersjach długości (6.84m i 7.20m), oferuje ergonomiczne wnętrze i łatwość transportu dla załogi 4-6 osób.",
     specifications: {
-      length: "22.0 m",
-      beam: "5.8 m",
-      draft: "1.6 m",
-      displacement: "28 t",
-      engine: "2 x 715 KM",
-      fuel: "3000 l",
-      water: "800 l",
-      berths: "10+4"
+      length: "6.84 m / 7.20 m",
+      beam: "2.53 m",
+      draft: "0.3 / 1.4 m",
+      displacement: "1700 kg",
+      engine: "max 16 kW",
+      ballast: "400 / 90 kg",
+      berths: "4-6",
+      cabinHeight: "1.72 m",
+      sails: "13.4 / 9.2 m²",
+      category: "B / C"
     },
     features: [
-      "Tri-deck configuration",
-      "Owner's deck z jacuzzi",
-      "Professional galley z chef station",
-      "Crew quarters z separate entrance",
-      "Stabilizatory fin",
-      "Tender garage 6m"
+      "Idealny do transportu - szerokość kadłuba 2.50m",
+      "Łatwy transport po Europie bez specjalnych zezwoleń",
+      "Klasyczna linia kadłuba",
+      "Doskonałe parametry nautyczne",
+      "Doskonała ergonomia",
+      "Otwarty koncept zabudowy wnętrza",
+      "Możliwość wydzielenia zamykanej kabiny dziobowej",
+      "Wydzielona kabina sanitarna z WC i prysznicem",
+      "Wygodne pełnowymiarowe koje dla 4 osób",
+      "Bezpieczny, ergonomiczny kokpit",
+      "Świetna wentylacja jachtu",
+      "Dostępny w wersjach: mieczowej, falszkilowej i kilowej",
+      "Kategoria projektowa B lub C",
+      "Dwie wersje długości: 6.84m i 7.20m"
     ],
     images: [],
     imageNames: [
@@ -380,24 +422,34 @@ const yachtModels: YachtModelData[] = [
   {
     name: "TES 550 MASTER",
     folder: "master",
-    description: "Wszechstronny motor yacht idealny do charter i prywatnego użytku. MASTER oferuje doskonały stosunek przestrzeni do długości.",
+    description: "Kompaktowy jacht żaglowy o niewielkiej klasycznej sylwetce z nowoczesnym przestronnym wnętrzem. MASTER oferuje zwinność w żegludze, bezpieczeństwo i doskonałą ergonomię dla załogi 4 osób.",
     specifications: {
-      length: "16.8 m",
-      beam: "4.9 m",
-      draft: "1.3 m",
-      displacement: "22 t",
-      engine: "2 x 550 KM",
-      fuel: "1800 l",
-      water: "500 l",
-      berths: "8+2"
+      length: "5.50 m",
+      beam: "2.50 m",
+      draft: "0.29 / 1.3 m",
+      displacement: "1280 kg",
+      engine: "14.7 kW",
+      ballast: "250 / 70 kg",
+      berths: "4",
+      cabinHeight: "1.72 m",
+      sails: "13 / 7.5 m²",
+      category: "C"
     },
     features: [
-      "Flybridge z wet bar",
-      "Hydraulic swim platform",
-      "Guest cabins z en-suite",
-      "Skylounge z panoramic windows",
-      "Bow thruster",
-      "Generator 21kW"
+      "Niewielka klasyczna sylwetka",
+      "Nowoczesne przestronne wnętrze",
+      "Zwinność podczas żeglugi",
+      "Wysoki poziom bezpieczeństwa",
+      "Doskonała ergonomia",
+      "Kabina sanitarna z WC",
+      "Mesa z doskonale wyposażonym kambuzem",
+      "Pełnowymiarowe koje dla 4 osób",
+      "Wygodny i bezpieczny kokpit",
+      "Certyfikacja P20 - żegluga do 20 mil od brzegu",
+      "Certyfikat CE Germanischer Lloyd",
+      "Przeznaczony na wody śródlądowe i morza",
+      "Dostępny w wersji mieczowej",
+      "Wersja kilowa w przygotowaniu"
     ],
     images: [],
     imageNames: [
@@ -503,7 +555,7 @@ const ProdukcjaJachtowPage: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Produkcja Jachtów - Jacht-Plast",
-    "description": "Profesjonalna produkcja luksusowych jachtów motorowych. Oferujemy pełną gamę modeli od sportowych cruiserów po luksusowe superjachty.",
+    "description": "Profesjonalna produkcja luksusowych jachtów motorowych. Oferujemy pełną gamę modeli od sportowych cruiserów po luksusowe jachty.",
     "provider": {
       "@type": "Organization",
       "name": "Jacht-Plast",
@@ -533,11 +585,11 @@ const ProdukcjaJachtowPage: React.FC = () => {
         />
         <meta 
           name="keywords" 
-          content="produkcja jachtów, jachty motorowe, NAVIA, LAGUNA, ILLUMINATUS, superjachty, luxury yachts, custom yachts" 
+          content="produkcja jachtów, jachty motorowe, NAVIA, LAGUNA, ILLUMINATUS, jachty, luxury yachts, custom yachts" 
         />
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content="Produkcja Jachtów | Luksusowe Jachty Motorowe | Jacht-Plast" />
-        <meta property="og:description" content="Ekskluzywna kolekcja luksusowych jachtów motorowych. Od sportowych cruiserów po superjachty oceaniczne." />
+        <meta property="og:description" content="Ekskluzywna kolekcja luksusowych jachtów motorowych. Od sportowych cruiserów po jachty oceaniczne." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://jacht-plast.pl/produkcja-jachtow" />
         <meta property="og:image" content="https://jacht-plast.pl/images/production/navia/1.webp" />
@@ -614,7 +666,7 @@ const ProdukcjaJachtowPage: React.FC = () => {
                   animate={isIntroInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.4 }}
                 >
-                  Od kompaktowych cruiserów po luksusowe superjachty - nasze portfolio obejmuje 
+                  Od kompaktowych cruiserów po luksusowe jachty - nasze portfolio obejmuje 
                   szeroką gamę modeli dostosowanych do różnych potrzeb i oczekiwań armatorów.
                 </motion.p>
               </S.IntroText>

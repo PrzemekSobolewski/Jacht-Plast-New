@@ -3,6 +3,7 @@ import Headroom from "react-headroom";
 import { useRouter } from "next/router";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBars, FaTimes, FaPhone, FaEnvelope } from "react-icons/fa";
+import { useGoogleAnalytics } from "@/hooks/useGoogleAnalytics";
 import {
   Wrapper,
   Logo,
@@ -24,6 +25,7 @@ import logo from "@/public/images/logo.png";
 
 const HeaderNavComponent = () => {
   const router = useRouter();
+  const { trackEvent, trackPhoneClick, trackEmailClick } = useGoogleAnalytics();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -44,6 +46,20 @@ const HeaderNavComponent = () => {
     setIsMobileMenuOpen(false);
   };
 
+  const handleNavClick = (label: string, href: string) => {
+    trackEvent('navigation_click', 'Header', label);
+    closeMobileMenu();
+    void router.push(href);
+  };
+
+  const handlePhoneClick = () => {
+    trackPhoneClick();
+  };
+
+  const handleEmailClick = () => {
+    trackEmailClick();
+  };
+
   const navItems = [
     { href: "/", label: "O Nas", active: router.pathname === "/" },
     { href: "/produkcja-jachtow", label: "Produkcja", active: router.pathname === "/produkcja" },
@@ -59,11 +75,11 @@ const HeaderNavComponent = () => {
           <ContactInfo>
             <ContactItem>
               <FaPhone />
-              <a href="tel:+48601256133">+48 601 256 133</a>
+              <a href="tel:+48601256133" onClick={handlePhoneClick}>+48 601 256 133</a>
             </ContactItem>
             <ContactItem>
               <FaEnvelope />
-              <a href="mailto:jachtplast@gmail.com">jachtplast@gmail.com</a>
+              <a href="mailto:jachtplast@gmail.com" onClick={handleEmailClick}>jachtplast@gmail.com</a>
             </ContactItem>
           </ContactInfo>
         </Wrapper>
@@ -94,7 +110,7 @@ const HeaderNavComponent = () => {
                     <NavLink
                       href={item.href}
                       $active={item.active}
-                      onClick={closeMobileMenu}
+                      onClick={() => handleNavClick(item.label, item.href)}
                     >
                       {item.label}
                     </NavLink>
@@ -142,7 +158,7 @@ const HeaderNavComponent = () => {
                     <MobileNavLink
                       href={item.href}
                       $active={item.active}
-                      onClick={closeMobileMenu}
+                      onClick={() => handleNavClick(item.label, item.href)}
                     >
                       {item.label}
                     </MobileNavLink>

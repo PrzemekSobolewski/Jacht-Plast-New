@@ -9,6 +9,7 @@ import {
   FaShip,
   FaCog
 } from "react-icons/fa";
+import { useGoogleAnalytics } from "@/hooks/useGoogleAnalytics";
 import { Container } from "../Container/Container.styles";
 import {
   StyledFooter,
@@ -28,8 +29,23 @@ import {
 } from "./Footer.styles";
 
 export const Footer = () => {
+  const { trackEvent, trackPhoneClick, trackEmailClick } = useGoogleAnalytics();
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    trackEvent('back_to_top_click', 'Footer', 'Back to Top Button');
+  };
+
+  const handlePhoneClick = () => {
+    trackPhoneClick();
+  };
+
+  const handleEmailClick = () => {
+    trackEmailClick();
+  };
+
+  const handleSocialClick = (platform: string) => {
+    trackEvent('social_click', 'Footer', platform);
   };
 
   const currentYear = new Date().getFullYear();
@@ -62,22 +78,22 @@ export const Footer = () => {
             <ContactItem>
               <FaPhone />
               <div>
-                <strong>Telefon:</strong><br />
-                <a href="tel:+48375673">+48 375 67 35</a><br />
-                <a href="tel:+48601256133">+48 601 256 133</a>
+                <strong>Telefon:</strong>
+                <a href="tel:+48375673" onClick={handlePhoneClick}>+48 375 67 35</a><br />
+                <a href="tel:+48601256133" onClick={handlePhoneClick}>+48 601 256 133</a>
               </div>
             </ContactItem>
             <ContactItem>
               <FaEnvelope />
               <div>
-                <strong>Email:</strong><br />
-                <a href="mailto:jachtplast@gmail.com">jachtplast@gmail.com</a>
+                <strong>Email:</strong>
+                <a href="mailto:jachtplast@gmail.com" onClick={handleEmailClick}>jachtplast@gmail.com</a>
               </div>
             </ContactItem>
             <ContactItem>
               <FaMapMarkerAlt />
               <div>
-                <strong>Adres:</strong><br />
+                <strong>Adres:</strong>
                 ul. Przemysłowa 4<br />
                 26-340 Drzewica
               </div>
@@ -85,7 +101,7 @@ export const Footer = () => {
             <ContactItem>
               <FaClock />
               <div>
-                <strong>Godziny pracy:</strong><br />
+                <strong>Godziny pracy:</strong>
                 Poniedziałek - Piątek<br />
                 8:00 - 17:00
               </div>
@@ -140,6 +156,7 @@ export const Footer = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Facebook Jacht Plast"
+                onClick={() => handleSocialClick('Facebook')}
               >
                 <FaFacebookSquare />
                 Facebook

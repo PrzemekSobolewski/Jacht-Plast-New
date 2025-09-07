@@ -6,9 +6,9 @@ import {
   FaTruck, 
   FaCog, 
   FaChevronDown,
-  FaPlay,
   FaCheck,
 } from "react-icons/fa";
+import { useGoogleAnalytics } from "@/hooks/useGoogleAnalytics";
 import {
   HeroSection,
   HeroContent,
@@ -39,15 +39,15 @@ import {
   MainContainer,
   VideoSection,
   VideoContainer,
-  PlayButton,
-  VideoOverlay
 } from "./MainPage.style";
 import { Container } from "@/components/Container/Container.styles";
 import Image from "next/image";
-import ramTransport from "@/public/images/ram-transport.webp";
+import companyImage from "@/public/images/hala.jpg";
 import { CTAButton } from "@/components/common/Buttons.styles";
 
 export const MainPage = () => {
+  const { trackEvent } = useGoogleAnalytics();
+
   const [heroRef, heroInView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -67,6 +67,7 @@ export const MainPage = () => {
     const servicesElement = document.getElementById('services');
     if (servicesElement) {
       servicesElement.scrollIntoView({ behavior: 'smooth' });
+      trackEvent('scroll_to_section', 'Navigation', 'Services Section');
     }
   };
 
@@ -74,24 +75,39 @@ export const MainPage = () => {
     {
       icon: <FaShip />,
       title: "Produkcja Jachtów",
-      description: "Projektowanie i budowa jachtów na indywidualne zamówienie z wykorzystaniem najnowszych technologii kompozytowych."
+      description: "Projektowanie i budowa jachtów na indywidualne zamówienie z wykorzystaniem najnowszych technologii kompozytowych.",
+      link: "/produkcja-jachtow"
     },
     {
       icon: <FaTruck />,
       title: "Transport Jachtów",
-      description: "Profesjonalny transport jachtów po całej Europie z pełnym ubezpieczeniem i najwyższymi standardami bezpieczeństwa."
+      description: "Profesjonalny transport jachtów po całej Europie z pełnym ubezpieczeniem i najwyższymi standardami bezpieczeństwa.",
+      link: "/transport-jachtow"
     },
     {
       icon: <FaCog />,
       title: "Laminaty FRP",
-      description: "Produkcja wysokiej jakości laminatów z włókna szklanego dla branży morskiej, automotive i przemysłowej."
+      description: "Produkcja wysokiej jakości laminatów z włókna szklanego dla branży morskiej, automotive i przemysłowej.",
+      link: "/laminaty"
     },
     {
       icon: <FaAnchor />,
       title: "Serwis i Naprawa",
-      description: "Kompleksowy serwis, naprawa i modernizacja jachtów oraz elementów kompozytowych."
+      description: "Kompleksowy serwis, naprawa i modernizacja jachtów oraz elementów kompozytowych.",
+      link: "/kontakt"
     }
   ];
+
+  const handleServiceClick = (serviceName: string, link: string) => {
+    trackEvent('service_card_click', 'Services', serviceName);
+    if (link) {
+      window.location.href = link;
+    }
+  };
+
+ /* const handleVideoPlay = () => {
+    trackEvent('video_play_click', 'Video', 'Ram Transport Video');
+  };*/
 
   const features = [
     "Doświadczenie od wielu lat w branży nautycznej",
@@ -173,6 +189,8 @@ export const MainPage = () => {
                   as={motion.div}
                   whileHover={{ y: -5, scale: 1.02 }}
                   transition={{ duration: 0.3 }}
+                  onClick={() => handleServiceClick(service.title, service.link)}
+                  style={{ cursor: 'pointer' }}
                 >
                   <ServiceIcon>{service.icon}</ServiceIcon>
                   <ServiceTitle>{service.title}</ServiceTitle>
@@ -225,11 +243,11 @@ export const MainPage = () => {
             >
               <AboutStats>
                 <StatItem>
-                  <StatNumber>15+</StatNumber>
+                  <StatNumber>28</StatNumber>
                   <StatLabel>Lat Doświadczenia</StatLabel>
                 </StatItem>
                 <StatItem>
-                  <StatNumber>500+</StatNumber>
+                  <StatNumber>Setki</StatNumber>
                   <StatLabel>Zrealizowanych Projektów</StatLabel>
                 </StatItem>
                 <StatItem>
@@ -241,7 +259,7 @@ export const MainPage = () => {
               <VideoSection>
                 <VideoContainer>
                   <Image
-                    src={ramTransport}
+                    src={companyImage}
                     alt="Transport jachtów - Jacht Plast"
                     fill
                     style={{ objectFit: 'cover' }}
@@ -250,15 +268,16 @@ export const MainPage = () => {
                     placeholder="blur"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
                   />
-                  <VideoOverlay>
+                  {/*<VideoOverlay>
                     <PlayButton
                       as={motion.button}
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
+                      onClick={handleVideoPlay}
                     >
                       <FaPlay />
                     </PlayButton>
-                  </VideoOverlay>
+                  </VideoOverlay>*/}
                 </VideoContainer>
               </VideoSection>
             </motion.div>
