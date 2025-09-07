@@ -217,12 +217,36 @@ export const FooterBottom = styled.div`
 export const Copyright = styled.p`
   color: ${LIGHT_GRAY};
   font-size: 14px;
-  margin: 0;
+  margin: 0 0 10px 0;
   line-height: 1.6;
   
   ${screenSizeTo("md")} {
     font-size: 12px;
     text-align: center;
+  }
+`;
+
+export const FooterLinks = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  
+  ${screenSizeTo("md")} {
+    gap: 15px;
+  }
+`;
+
+export const FooterLink = styled.a`
+  color: ${LIGHT_GRAY};
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: ${ACCENT_BLUE};
+    text-decoration: underline;
   }
 `;
 

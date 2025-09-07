@@ -10,6 +10,7 @@ import {
   FaCog
 } from "react-icons/fa";
 import { useGoogleAnalytics } from "@/hooks/useGoogleAnalytics";
+import { useCookieConsent } from "@/contexts";
 import { Container } from "../Container/Container.styles";
 import {
   StyledFooter,
@@ -25,11 +26,14 @@ import {
   Copyright,
   BackToTop,
   CompanyInfo,
-  ServicesGrid
+  ServicesGrid,
+  FooterLinks,
+  FooterLink
 } from "./Footer.styles";
 
 export const Footer = () => {
   const { trackEvent, trackPhoneClick, trackEmailClick } = useGoogleAnalytics();
+  const { showSettings } = useCookieConsent();
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -46,6 +50,11 @@ export const Footer = () => {
 
   const handleSocialClick = (platform: string) => {
     trackEvent('social_click', 'Footer', platform);
+  };
+
+  const handleCookieSettingsClick = () => {
+    showSettings();
+    trackEvent('cookie_settings_click', 'Footer', 'Cookie Settings');
   };
 
   const currentYear = new Date().getFullYear();
@@ -179,6 +188,20 @@ export const Footer = () => {
             © {currentYear} Jacht Plast. Wszystkie prawa zastrzeżone. 
             Projektowanie i produkcja jachtów oraz laminatów kompozytowych.
           </Copyright>
+          <FooterLinks>
+            <FooterLink href="/polityka-cookies">
+              Polityka Cookies
+            </FooterLink>
+            <FooterLink 
+              href="#" 
+              onClick={(e) => {
+                e.preventDefault();
+                handleCookieSettingsClick();
+              }}
+            >
+              Ustawienia Cookies
+            </FooterLink>
+          </FooterLinks>
         </FooterBottom>
       </Container>
     </StyledFooter>

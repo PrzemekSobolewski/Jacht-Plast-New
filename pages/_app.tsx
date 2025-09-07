@@ -3,6 +3,8 @@ import type { NextPage } from "next";
 import type { AppProps } from "next/app";
 import "@/styles/globals.css";
 import { GoogleAnalytics } from "@/components/common/GoogleAnalytics";
+import { CookieBanner, CookieSettingsButton } from "@/components/CookieBanner";
+import { CookieConsentProvider } from "@/contexts";
 
 export type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -24,9 +26,11 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page);
 
   return (
-    <>
+    <CookieConsentProvider>
       <GoogleAnalytics />
+      <CookieBanner />
+      <CookieSettingsButton />
       {getLayout(<Component {...pageProps} />)}
-    </>
+    </CookieConsentProvider>
   );
 }

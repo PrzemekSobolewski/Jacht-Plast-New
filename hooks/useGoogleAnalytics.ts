@@ -1,4 +1,5 @@
 import { useCallback } from 'react';
+import { useCookieConsent } from '@/contexts';
 
 // Declare gtag function for TypeScript
 declare global {
@@ -12,13 +13,15 @@ declare global {
 }
 
 export const useGoogleAnalytics = () => {
+  const { hasAnalyticsConsent } = useCookieConsent();
+
   const trackEvent = useCallback((
     action: string,
     category: string,
     label?: string,
     value?: number
   ) => {
-    if (typeof window !== 'undefined' && window.gtag) {
+    if (typeof window !== 'undefined' && window.gtag && hasAnalyticsConsent) {
       const config: Record<string, string | number | boolean> = {
         event_category: category,
       };
@@ -28,23 +31,23 @@ export const useGoogleAnalytics = () => {
       
       window.gtag('event', action, config);
     }
-  }, []);
+  }, [hasAnalyticsConsent]);
 
   const trackPageView = useCallback((url: string) => {
-    if (typeof window !== 'undefined' && window.gtag) {
+    if (typeof window !== 'undefined' && window.gtag && hasAnalyticsConsent) {
       window.gtag('config', 'UA-180598229-1', {
         page_path: url,
       });
     }
-  }, []);
+  }, [hasAnalyticsConsent]);
 
   const trackConversion = useCallback((conversionId?: string) => {
-    if (typeof window !== 'undefined' && window.gtag) {
+    if (typeof window !== 'undefined' && window.gtag && hasAnalyticsConsent) {
       window.gtag('event', 'conversion', {
         send_to: conversionId || 'AW-16661980602/TVtLCOGw3McZELrLhok-'
       });
     }
-  }, []);
+  }, [hasAnalyticsConsent]);
 
   const trackContactForm = useCallback(() => {
     trackEvent('form_submit', 'Contact', 'Contact Form');
