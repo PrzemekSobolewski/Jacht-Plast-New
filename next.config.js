@@ -5,8 +5,10 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  output: 'export',
   swcMinify: true,
   images: {
+    unoptimized: true,
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
@@ -44,15 +46,14 @@ module.exports = {
       },
     ]
   },
-  exportPathMap: function (
-        defaultPathMap, {dev, dir, outDir, distDir, buildId}
-    ) {
+  exportPathMap: function () {
         return {
             '/': {page: '/'},
             '/produkcja-jachtow.html': {page: '/produkcja-jachtow'},
             '/transport-jachtow.html': {page: '/transport-jachtow'},
             '/kontakt.html': {page: '/kontakt'},
-            '/laminaty.html': {page: '/laminaty'}
+            '/laminaty.html': {page: '/laminaty'},
+            '/polityka-cookies.html': {page: '/polityka-cookies'}
         }
     },
 }
