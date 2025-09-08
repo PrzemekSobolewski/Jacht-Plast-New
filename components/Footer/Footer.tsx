@@ -160,7 +160,7 @@ export const Footer = () => {
             </FooterText>
             <SocialLinks>
               <SocialLink 
-                href="https://www.facebook.com/jachtplast" 
+                href="https://www.facebook.com/share/1BL5LSPUCq/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Facebook Jacht Plast"

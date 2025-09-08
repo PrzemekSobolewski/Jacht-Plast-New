@@ -31,7 +31,7 @@ export default function Home() {
       "addressCountry": "PL"
     },
     "sameAs": [
-      "https://www.facebook.com/jachtplast"
+      "https://www.facebook.com/share/1BL5LSPUCq/"
     ]
   };
 
