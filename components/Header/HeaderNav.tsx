@@ -62,7 +62,7 @@ const HeaderNavComponent = () => {
 
   const navItems = [
     { href: "/", label: "O Nas", active: router.pathname === "/" },
-    { href: "/produkcja-jachtow", label: "Produkcja", active: router.pathname === "/produkcja" },
+    { href: "/produkcja-jachtow", label: "Produkcja", active: router.pathname === "/produkcja-jachtow" },
     { href: "/transport-jachtow", label: "Transport", active: router.pathname === "/transport-jachtow" },
     { href: "/laminaty", label: "Laminaty", active: router.pathname === "/laminaty" },
     { href: "/kontakt", label: "Kontakt", active: router.pathname === "/kontakt" },
