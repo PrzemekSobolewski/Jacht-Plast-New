@@ -578,7 +578,7 @@ const ProdukcjaJachtowPage: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Produkcja Jachtów | Luksusowe Jachty Motorowe | Jacht-Plast</title>
+        <title>Produkcja Jachtów | Luksusowe Jachty Żaglowe i Motorowe | Jacht-Plast</title>
         <meta 
           name="description" 
           content="Profesjonalna produkcja luksusowych jachtów żaglowych i motorowych. Modele NAVIA, LAGUNA, ILLUMINATUS, DREAMER i inne. Najwyższa jakość wykonania i indywidualne projekty." 
@@ -588,7 +588,7 @@ const ProdukcjaJachtowPage: React.FC = () => {
           content="produkcja jachtów, jachty żaglowe, jachty motorowe, NAVIA, LAGUNA, ILLUMINATUS, jachty, luxury yachts, custom yachts" 
         />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Produkcja Jachtów | Luksusowe Jachty Motorowe | Jacht-Plast" />
+        <meta property="og:title" content="Produkcja Jachtów | Luksusowe Jachty Żaglowe i Motorowe | Jacht-Plast" />
         <meta property="og:description" content="Ekskluzywna kolekcja luksusowych jachtów żaglowych i motorowych. Od sportowych cruiserów po jachty oceaniczne." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://jacht-plast.pl/produkcja-jachtow" />
@@ -627,7 +627,7 @@ const ProdukcjaJachtowPage: React.FC = () => {
                   transition={{ duration: 0.8, delay: 0.4 }}
                 >
                   <S.HeroSubtitle>
-                    Tworzymy luksusowe jachty motorowe najwyższej jakości, łącząc tradycyjne rzemiosło z najnowszymi technologiami morskimi
+                    Tworzymy luksusowe jachty żaglowe i motorowe najwyższej jakości, łącząc tradycyjne rzemiosło z najnowszymi technologiami morskimi
                   </S.HeroSubtitle>
                 </motion.div>
               </S.HeroContent>
