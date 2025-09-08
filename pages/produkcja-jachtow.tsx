@@ -103,7 +103,7 @@ const yachtModels: YachtModelData[] = [
   {
     name: "NAVIA",
     folder: "navia",
-    description: "Sportowa łódź motorowa z 2009 roku z napędem strumieniowym Scott i silnikiem Volvo Penta. NAVIA oferuje duży pokład dla 10 osób oraz komfortową kabinę z łóżkiem dla 3-4 osób.",
+    description: "Sportowa łódź motorowa. NAVIA oferuje duży pokład dla 10 osób oraz komfortową kabinę z łóżkiem dla 3-4 osób.",
     specifications: {
       length: "7.5 m",
       beam: "2.99 m",
@@ -146,15 +146,15 @@ const yachtModels: YachtModelData[] = [
       engine: "8 - 30 KM",
       berths: "5-6",
       cabinHeight: "2.00 m",
-      category: "C lub B"
+      category: "C"
     },
     features: [
       "Kompaktowe wymiary - długość 7m, szerokość 2.49m",
       "Płytkie zanurzenie 0.40m - dostęp do płytkich akwenów",
       "Wysoka kabina 2.00m zapewniająca komfort",
-      "Elastyczna moc silnika 8-30 KM",
+      "Elastyczna moc silnika 25-30 KM",
       "Miejsce dla 5-6 osób na pokładzie",
-      "Kategoria projektowa C lub B",
+      "Kategoria projektowa C",
       "Idealne proporcje dla cruisingu",
       "Doskonałe właściwości morskie",
       "Komfortowe warunki na pokładzie",
@@ -180,10 +180,10 @@ const yachtModels: YachtModelData[] = [
     folder: "navigathor",
     description: "Nowoczesny cruiser motorowy zaprojektowany z myślą o komforcie i funkcjonalności. NAVIGATHOR 30 oferuje dwie zamykane sypialnie i wysoką kabinę dla załogi 6 osób.",
     specifications: {
-      length: "8.4 m",
+      length: "9.0 m",
       beam: "3.2 m",
       draft: "0.6 m",
-      engine: "30 KM",
+      engine: "30-60 KM",
       berths: "4+2",
       cabinHeight: "2.0 m"
     },
@@ -191,8 +191,8 @@ const yachtModels: YachtModelData[] = [
       "Nowoczesny cruiser motorowy dla 6 osób",
       "Dwie zamykane sypialnie dla prywatności",
       "Wysoka kabina 2.0m zapewniająca komfort",
-      "Silnik 30 KM o optymalnej mocy",
-      "Głębinowy ster z kołem sterowym",
+      "Silnik 30-60 KM o optymalnej mocy",
+      "Głębinowy ster",
       "Układ koi 4+2 dla różnych potrzeb",
       "Płytkie zanurzenie 0.6m",
       "Szeroka konstrukcja 3.2m dla stabilności",
@@ -214,7 +214,7 @@ const yachtModels: YachtModelData[] = [
         "navigathor_9.webp",
     ]
   },
-  {
+  /*{
     name: "TES 393 ILLUMINATUS",
     folder: "illuminatis",
     description: "Luksusowy jacht motorowy o imponujących rozmiarach, zaprojektowany dla najbardziej wymagających armatorów. ILLUMINATUS oferuje przestronne wnętrze z trzema zamykanymi sypialniami i najwyższą jakość wykończenia dla załogi 7 osób.",
@@ -287,7 +287,7 @@ const yachtModels: YachtModelData[] = [
         "dreamer_4.webp",
         "dreamer_5.webp",
     ]
-  },
+  },*/
   {
     name: "TES 28 MAGNAM",
     folder: "magnam",
@@ -338,7 +338,7 @@ const yachtModels: YachtModelData[] = [
     description: "Kompaktowy jacht żaglowy idealny do transportu i łatwego prowadzenia. VERSUS łączy w sobie bezpieczeństwo, doskonałe parametry i luksusowe wykończenie, oferując wygodne warunki dla załogi 5-6 osób.",
     specifications: {
       length: "7.50 m",
-      beam: "2.54 m",
+      beam: "2.50 m",
       draft: "0.35 / 1.51 m",
       displacement: "2460 kg",
       engine: "max 14.7 kW",
@@ -381,7 +381,7 @@ const yachtModels: YachtModelData[] = [
     description: "Kompaktowy jacht żaglowy o klasycznej linii kadłuba z doskonałymi parametrami. Dostępny w dwóch wersjach długości (6.84m i 7.20m), oferuje ergonomiczne wnętrze i łatwość transportu dla załogi 4-6 osób.",
     specifications: {
       length: "6.84 m / 7.20 m",
-      beam: "2.53 m",
+      beam: "2.50 m",
       draft: "0.3 / 1.4 m",
       displacement: "1700 kg",
       engine: "max 16 kW",
@@ -419,7 +419,7 @@ const yachtModels: YachtModelData[] = [
         "20180507_123208.webp",
     ]
   },
-  {
+  /*{
     name: "TES 550 MASTER",
     folder: "master",
     description: "Kompaktowy jacht żaglowy o niewielkiej klasycznej sylwetce z nowoczesnym przestronnym wnętrzem. MASTER oferuje zwinność w żegludze, bezpieczeństwo i doskonałą ergonomię dla załogi 4 osób.",
@@ -461,7 +461,7 @@ const yachtModels: YachtModelData[] = [
         "master_6.webp",
         "master_7.webp",
     ]
-  },
+  },*/
   {
     name: "Custom Projects",
     folder: "diffrent",
@@ -555,7 +555,7 @@ const ProdukcjaJachtowPage: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Produkcja Jachtów - Jacht-Plast",
-    "description": "Profesjonalna produkcja luksusowych jachtów motorowych. Oferujemy pełną gamę modeli od sportowych cruiserów po luksusowe jachty.",
+    "description": "Profesjonalna produkcja luksusowych jachtów żaglowych i motorowych. Oferujemy pełną gamę modeli od sportowych cruiserów po luksusowe jachty.",
     "provider": {
       "@type": "Organization",
       "name": "Jacht-Plast",
@@ -581,15 +581,15 @@ const ProdukcjaJachtowPage: React.FC = () => {
         <title>Produkcja Jachtów | Luksusowe Jachty Motorowe | Jacht-Plast</title>
         <meta 
           name="description" 
-          content="Profesjonalna produkcja luksusowych jachtów motorowych. Modele NAVIA, LAGUNA, ILLUMINATUS, DREAMER i inne. Najwyższa jakość wykonania i indywidualne projekty." 
+          content="Profesjonalna produkcja luksusowych jachtów żaglowych i motorowych. Modele NAVIA, LAGUNA, ILLUMINATUS, DREAMER i inne. Najwyższa jakość wykonania i indywidualne projekty." 
         />
         <meta 
           name="keywords" 
-          content="produkcja jachtów, jachty motorowe, NAVIA, LAGUNA, ILLUMINATUS, jachty, luxury yachts, custom yachts" 
+          content="produkcja jachtów, jachty żaglowe, jachty motorowe, NAVIA, LAGUNA, ILLUMINATUS, jachty, luxury yachts, custom yachts" 
         />
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content="Produkcja Jachtów | Luksusowe Jachty Motorowe | Jacht-Plast" />
-        <meta property="og:description" content="Ekskluzywna kolekcja luksusowych jachtów motorowych. Od sportowych cruiserów po jachty oceaniczne." />
+        <meta property="og:description" content="Ekskluzywna kolekcja luksusowych jachtów żaglowych i motorowych. Od sportowych cruiserów po jachty oceaniczne." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://jacht-plast.pl/produkcja-jachtow" />
         <meta property="og:image" content="https://jacht-plast.pl/images/production/navia/1.webp" />
@@ -656,7 +656,7 @@ const ProdukcjaJachtowPage: React.FC = () => {
                   animate={isIntroInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.3 }}
                 >
-                  Jacht-Plast specjalizuje się w produkcji ekskluzywnych jachtów motorowych, 
+                  Jacht-Plast specjalizuje się w produkcji ekskluzywnych jachtów żaglowych i motorowych, 
                   które łączą w sobie elegancję, funkcjonalność i najwyższą jakość wykonania. 
                   Każdy model w naszej ofercie reprezentuje lata doświadczenia w branży morskiej 
                   oraz pasję do tworzenia wyjątkowych jednostek pływających.
