@@ -12,7 +12,8 @@
     "lint": "eslint \"*/**/*.{js,ts,tsx}\" --quiet",
     "prettier": "prettier --check ./pages/**/*.{ts,tsx} ./apis/**/*.{ts,tsx} ./components/**/*.{ts,tsx} ./hooks/**/*.{ts,tsx} ./redux/**/*.{ts,tsx} ./styles/**/*.{css,ts} ./models/**/*.{ts,tsx} ./modules/**/*.{ts,tsx} ./config/**/*.{ts,tsx}",
     "prettier-fix": "prettier --write ./pages/**/*.{ts,tsx} ./apis/**/*.{ts,tsx} ./components/**/*.{ts,tsx} ./hooks/**/*.{ts,tsx} ./redux/**/*.{ts,tsx} ./styles/**/*.{css,ts} ./models/**/*.{ts,tsx} ./modules/**/*.{ts,tsx} ./config/**/*.{ts,tsx}",
-    "deploy": "npm run build"
+    "deploy": "npm run build",
+    "deploy-static": "next build && next export"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
   "homepage": "https://github.com/PrzemekSobolewski/Jacht-Plast-New#readme",
   "devDependencies": {
     "@babel/core": "^7.25.2",
+    "@netlify/plugin-nextjs": "^5.13.0",
     "@next/bundle-analyzer": "^15.5.2",
     "@types/node": "^20.16.5",
     "@types/react": "^18.3.8",

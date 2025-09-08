@@ -1,5 +1,15 @@
 [build]
-  functions = "functions"
+  command = "npm run build"
+  publish = ".next"
+
+# Plugin Next.js dla Netlify
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Netlify automatycznie wykrywa Next.js i konwertuje API routes na Functions
+[build.environment]
+  # Nie potrzebujemy już omijania skanowania sekretów dla API routes
+  NODE_VERSION = "18"
 
 [dev]
   publish = "dist"
