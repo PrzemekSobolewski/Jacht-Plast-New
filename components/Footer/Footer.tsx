@@ -88,7 +88,6 @@ export const Footer = () => {
               <FaPhone />
               <div>
                 <strong>Telefon:</strong>
-                <a href="tel:+48375673" onClick={handlePhoneClick}>+48 375 67 35</a><br />
                 <a href="tel:+48601256133" onClick={handlePhoneClick}>+48 601 256 133</a>
               </div>
             </ContactItem>

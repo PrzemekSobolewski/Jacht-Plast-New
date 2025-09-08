@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Head from "next/head";
@@ -8,11 +7,7 @@ import {
   FaEnvelope, 
   FaMapMarkerAlt, 
   FaClock,
-  FaPaperPlane,
-  FaUser,
-  FaComment,
-  FaBuilding,
-  FaCheckCircle
+  FaBuilding
 } from "react-icons/fa";
 import { HeaderNav } from "@/components/Header/HeaderNav";
 import { Footer } from "@/components/Footer/Footer";
@@ -25,94 +20,22 @@ import {
   HeroSubtitle,
   ContactSection,
   ContactGrid,
-  Section as FormSection,
-  FormContainer as ContactForm,
-  FormGroup,
-  FormLabel,
-  FormInput,
-  FormTextarea,
-  FormButton as SubmitButton,
   MapSection,
   MapContainer,
   MapWrapper,
-  InfoSection as CompanyInfo,
-  InfoGrid,
   InfoCard,
   InfoIcon,
   InfoTitle,
   InfoText,
   SectionTitle,
-  SectionSubtitle,
-  FormSuccess as SuccessMessage,
-  FormError as ErrorMessage
+  SectionSubtitle
 } from "@/modules/ContactPage/ContactPage.styles";
 
 export default function Kontakt() {
-  const { trackContactForm, trackPhoneClick, trackEmailClick } = useGoogleAnalytics();
-
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    phone: '',
-    subject: '',
-    message: ''
-  });
-  
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const { trackPhoneClick, trackEmailClick } = useGoogleAnalytics();
   
   const [heroRef, heroInView] = useInView({ triggerOnce: true, threshold: 0.1 });
-  const [formRef, formInView] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [mapRef, mapInView] = useInView({ triggerOnce: true, threshold: 0.1 });
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus('idle');
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setSubmitStatus('success');
-        trackContactForm(); // Track successful form submission
-        setFormData({
-          name: '',
-          email: '',
-          company: '',
-          phone: '',
-          subject: '',
-          message: ''
-        });
-      } else {
-        setSubmitStatus('error');
-      }
-    } catch (error) {
-      console.error('Error sending email:', error);
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const handleFormSubmit = (e: React.FormEvent) => {
-    void handleSubmit(e);
-  };
 
   const handlePhoneClick = () => {
     trackPhoneClick();
@@ -260,7 +183,6 @@ export default function Kontakt() {
                   </InfoIcon>
                   <InfoTitle>Telefon</InfoTitle>
                   <InfoText>
-                    <a href="tel:+48375673" onClick={handlePhoneClick}>+48 375 67 35</a><br />
                     <a href="tel:+48601256133" onClick={handlePhoneClick}>+48 601 256 133</a>
                   </InfoText>
                 </InfoCard>
@@ -318,164 +240,29 @@ export default function Kontakt() {
                   </InfoText>
                 </InfoCard>
               </motion.div>
-            </ContactGrid>
-          </Container>
-        </ContactSection>
-
-        {/* Contact Form Section */}
-        <FormSection ref={formRef} style={{padding: "0 0 100px"}}>
-     
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={formInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6 }}
-            >
-              <SectionTitle>Formularz Kontaktowy</SectionTitle>
-              <SectionSubtitle>
-                Napisz do nas - odpowiemy najszybciej jak to możliwe
-              </SectionSubtitle>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={formInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <ContactForm onSubmit={handleFormSubmit}>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px' }}>
-                  <FormGroup>
-                    <FormLabel htmlFor="name">
-                      <FaUser /> Imię i Nazwisko *
-                    </FormLabel>
-                    <FormInput
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      required
-                      placeholder="Wprowadź swoje imię i nazwisko"
-                    />
-                  </FormGroup>
-
-                  <FormGroup>
-                    <FormLabel htmlFor="email">
-                      <FaEnvelope /> Email *
-                    </FormLabel>
-                    <FormInput
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      placeholder="twoj@email.com"
-                    />
-                  </FormGroup>
-
-                  <FormGroup>
-                    <FormLabel htmlFor="company">
-                      <FaBuilding /> Firma
-                    </FormLabel>
-                    <FormInput
-                      type="text"
-                      id="company"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleInputChange}
-                      placeholder="Nazwa firmy (opcjonalnie)"
-                    />
-                  </FormGroup>
-
-                  <FormGroup>
-                    <FormLabel htmlFor="phone">
-                      <FaPhone /> Telefon
-                    </FormLabel>
-                    <FormInput
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      placeholder="+48 123 456 789"
-                    />
-                  </FormGroup>
-                </div>
-
-                <FormGroup>
-                  <FormLabel htmlFor="subject">
-                    <FaComment /> Temat *
-                  </FormLabel>
-                  <FormInput
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    required
-                    placeholder="Czego dotyczy Twoja wiadomość?"
-                  />
-                </FormGroup>
-
-                <FormGroup>
-                  <FormLabel htmlFor="message">
-                    <FaComment /> Wiadomość *
-                  </FormLabel>
-                  <FormTextarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    required
-                    rows={6}
-                    placeholder="Opisz szczegółowo swoje zapytanie..."
-                  />
-                </FormGroup>
-
-                {submitStatus === 'success' && (
-                  <SuccessMessage>
-                    <FaCheckCircle />
-                    Dziękujemy! Twoja wiadomość została wysłana. Odpowiemy najszybciej jak to możliwe.
-                  </SuccessMessage>
-                )}
-
-                {submitStatus === 'error' && (
-                  <ErrorMessage>
-                    Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie lub skontaktuj się z nami telefonicznie.
-                  </ErrorMessage>
-                )}
-
-                <SubmitButton
-                  type="submit"
-                  disabled={isSubmitting}
-                  as={motion.button}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <FaPaperPlane />
-                  {isSubmitting ? 'Wysyłanie...' : 'Wyślij Wiadomość'}
-                </SubmitButton>
-              </ContactForm>
-            </motion.div>
-          
-        </FormSection>
-
-        {/* Company Info Section */}
-        <CompanyInfo>
-          <Container>
-            <InfoGrid>
-              <InfoCard>
-                <InfoIcon>
-                  <FaBuilding />
-                </InfoIcon>
-                <InfoTitle>Dane Firmy</InfoTitle>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={heroInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.7 }}
+              >
+                <InfoCard>
+                  <InfoIcon>
+                    <FaBuilding />
+                  </InfoIcon>
+                  <InfoTitle>Dane Firmy</InfoTitle>
                 <InfoText>
                   <strong>PHUP JACHT-PLAST</strong><br />
                   NIP: 799-13-31-976<br />
                   REGON: 100284787
                 </InfoText>
               </InfoCard>
+              </motion.div>
 
+            <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={heroInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.7 }}
+              >
               <InfoCard>
                 <InfoIcon>
                   <FaMapMarkerAlt />
@@ -487,9 +274,10 @@ export default function Kontakt() {
                   łódzkim, przy drodze krajowej.
                 </InfoText>
               </InfoCard>
-            </InfoGrid>
+              </motion.div>
+            </ContactGrid>
           </Container>
-        </CompanyInfo>
+        </ContactSection>
 
         {/* Map Section */}
         <MapSection ref={mapRef}>
