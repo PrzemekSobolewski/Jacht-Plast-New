@@ -92,7 +92,7 @@ export const ContactButton = styled.a`
   }
 `;
 
-export const FormContainer = styled.div`
+export const FormContainer = styled.form`
   max-width: 800px;
   margin: 0 auto;
   background: ${WHITE};
@@ -180,7 +180,7 @@ export const FormButton = styled.button<{ disabled?: boolean }>`
   align-items: center;
   justify-content: center;
   gap: 8px;
-  
+
   &:hover:not(:disabled) {
     transform: translateY(-2px);
     box-shadow: 0 12px 35px rgba(43, 155, 186, 0.4);

@@ -17,7 +17,6 @@ type AppPropsWithLayout = AppProps & {
 // Web Vitals monitoring
 export function reportWebVitals(metric: { id: string; name: string; value: number }) {
   if (process.env.NODE_ENV === 'production') {
-    console.log(metric);
     // Tutaj można dodać wysyłanie do analytics
   }
 }

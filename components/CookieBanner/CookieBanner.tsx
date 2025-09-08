@@ -34,7 +34,6 @@ export const CookieBanner: React.FC = () => {
 
   // Resetuj zaawansowane ustawienia gdy banner się pokazuje
   React.useEffect(() => {
-    console.log(showBanner);
     if (showBanner) {
       setShowAdvancedSettings(false);
     }
