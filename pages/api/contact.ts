@@ -164,7 +164,7 @@ export default async function handler(
     console.error('Błąd podczas wysyłania emaila:', error);
     
     return res.status(500).json({
-      message: 'Wystąpił błąd podczas wysyłania wiadomości. Prosimy spróbować ponownie.',
+      message: JSON.stringify(error) || 'Wystąpił błąd podczas wysyłania wiadomości.',
       success: false
     });
   }
