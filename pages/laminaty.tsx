@@ -250,7 +250,6 @@ const LaminatyPage: React.FC = () => {
           content="laminaty na zamówienie, produkcja kompozytów, laminaty przemysłowe, materiały kompozytowe, laminowanie, żywice, włókna" 
         />
         <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         
         {/* Open Graph */}
         <meta property="og:title" content="Laminaty na Zamówienie - Produkcja Kompozytów | Jacht Plast" />

@@ -229,7 +229,6 @@ const TransportJachtowComponent = () => {
           content="transport jachtów, transport łodzi, przewóz jachtów, transport morski, transport żaglówek, transport motorówek, Polska, Europa" 
         />
         <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         
         {/* Open Graph */}
         <meta property="og:title" content="Transport Jachtów - Profesjonalny Transport po Całej Europie" />

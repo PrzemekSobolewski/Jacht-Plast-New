@@ -38,6 +38,7 @@ export default function Home() {
   return (
     <>
       <Head>
+        {/* Meta tagi specyficzne dla strony głównej */}
         <title>Jacht Plast - Produkcja i Transport Jachtów | Laminaty FRP</title>
         <meta 
           name="description" 
@@ -47,14 +48,9 @@ export default function Home() {
           name="keywords" 
           content="produkcja jachtów, transport jachtów, laminaty kompozytowe, naprawa jachtów, FRP, żywica poliestrowa, Drzewica, polska stocznia" 
         />
-        <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="author" content="Jacht Plast" />
         
-        {/* Preload kluczowych zasobów */}
-        <link rel="preload" href="/_next/static/css/app.css" as="style" />
+        {/* Preload obrazów specyficznych dla strony głównej */}
         <link rel="preload" href="/images/ram-transport.webp" as="image" />
-        <link rel="preload" href="/_next/static/chunks/framework.js" as="script" />
         
         {/* Open Graph */}
         <meta property="og:title" content="Jacht Plast - Produkcja i Transport Jachtów" />
@@ -73,23 +69,13 @@ export default function Home() {
         {/* Canonical URL */}
         <link rel="canonical" href="https://jacht-plast.pl" />
         
-        {/* Favicon */}
-        <link rel="icon" href="/icon.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/icon.png" />
-        
-        {/* Structured Data */}
+        {/* Structured Data dla strony głównej */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(structuredData),
           }}
         />
-        
-        {/* Additional SEO tags */}
-        <meta name="geo.region" content="PL-26" />
-        <meta name="geo.placename" content="Drzewica" />
-        <meta name="geo.position" content="51.3833;20.0167" />
-        <meta name="ICBM" content="51.3833, 20.0167" />
       </Head>
       <HeaderNav />
       <main>
