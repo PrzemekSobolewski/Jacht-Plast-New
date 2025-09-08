@@ -42,7 +42,7 @@ export default function Home() {
         <title>Jacht Plast - Produkcja i Transport Jachtów | Laminaty FRP</title>
         <meta 
           name="description" 
-          content="Jacht Plast - profesjonalna produkcja jachtów, transport jachtów oraz wytwarzanie laminatów kompozytowych. Doświadczenie od lat, najwyższa jakość usług w branży nautycznej." 
+          content="Jacht Plast - profesjonalna produkcja jachtów, transport jachtów oraz wytwarzanie laminatów kompozytowych. Doświadczenie od lat, najwyższa jakość usług w branży żeglarskiej." 
         />
         <meta 
           name="keywords" 

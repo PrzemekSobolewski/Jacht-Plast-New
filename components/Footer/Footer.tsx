@@ -156,7 +156,7 @@ export const Footer = () => {
           <FooterSection>
             <FooterTitle>Śledź Nas</FooterTitle>
             <FooterText>
-              Bądź na bieżąco z naszymi projektami i nowościami w branży nautycznej.
+              Bądź na bieżąco z naszymi projektami i nowościami w branży żeglarskiej.
             </FooterText>
             <SocialLinks>
               <SocialLink 

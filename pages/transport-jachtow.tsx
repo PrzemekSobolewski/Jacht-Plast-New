@@ -316,9 +316,9 @@ const TransportJachtowComponent = () => {
                   <h3>Nasza firma posiada wieloletnie doświadczenie w budowie i naprawie 
                   jachtów żaglowych i motorowych, co daje nam wiedzę o potrzebach klientów 
                   zainteresowanych transportem swoich jednostek.</h3>
-                  
-                  <p>Dzięki naszemu doświadczeniu w branży nautycznej, rozumiemy jak cenne 
-                  są Twoje jachty i łodzie. Każdy transport traktujemy z najwyższą starannością, 
+
+                  <p>Dzięki naszemu doświadczeniu w branży żeglarskiej, rozumiemy jak cenne
+                  są Twoje jachty i łodzie. Każdy transport traktujemy z najwyższą starannością,
                   zapewniając bezpieczeństwo i profesjonalną obsługę na każdym etapie.</p>
                 </AboutText>
                 

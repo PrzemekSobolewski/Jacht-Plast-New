@@ -335,7 +335,7 @@ const yachtModels: YachtModelData[] = [
   {
     name: "TES 246 VERSUS",
     folder: "versus",
-    description: "Kompaktowy jacht żaglowy idealny do transportu i łatwego prowadzenia. VERSUS łączy w sobie bezpieczeństwo, doskonałe parametry nautyczne i luksusowe wykończenie, oferując wygodne warunki dla załogi 5-6 osób.",
+    description: "Kompaktowy jacht żaglowy idealny do transportu i łatwego prowadzenia. VERSUS łączy w sobie bezpieczeństwo, doskonałe parametry i luksusowe wykończenie, oferując wygodne warunki dla załogi 5-6 osób.",
     specifications: {
       length: "7.50 m",
       beam: "2.54 m",
@@ -352,7 +352,7 @@ const yachtModels: YachtModelData[] = [
       "Idealny do transportu - szerokość 2.49m bez specjalnych zezwoleń",
       "Łatwy w prowadzeniu nawet przez jedną osobę",
       "Dynamiczny i bezpieczny w żegludze",
-      "Doskonałe parametry nautyczne",
+      "Doskonałe parametry",
       "Odwrócona dziobnica zapewniająca stabilność",
       "Doskonała widoczność z kokpitu",
       "Przestronna kabina sanitarna z WC i prysznicem",
@@ -378,7 +378,7 @@ const yachtModels: YachtModelData[] = [
   {
     name: "TES 678 BT-TES 720",
     folder: "bt_tes",
-    description: "Kompaktowy jacht żaglowy o klasycznej linii kadłuba z doskonałymi parametrami nautycznymi. Dostępny w dwóch wersjach długości (6.84m i 7.20m), oferuje ergonomiczne wnętrze i łatwość transportu dla załogi 4-6 osób.",
+    description: "Kompaktowy jacht żaglowy o klasycznej linii kadłuba z doskonałymi parametrami. Dostępny w dwóch wersjach długości (6.84m i 7.20m), oferuje ergonomiczne wnętrze i łatwość transportu dla załogi 4-6 osób.",
     specifications: {
       length: "6.84 m / 7.20 m",
       beam: "2.53 m",
@@ -395,7 +395,7 @@ const yachtModels: YachtModelData[] = [
       "Idealny do transportu - szerokość kadłuba 2.50m",
       "Łatwy transport po Europie bez specjalnych zezwoleń",
       "Klasyczna linia kadłuba",
-      "Doskonałe parametry nautyczne",
+      "Doskonałe parametry",
       "Doskonała ergonomia",
       "Otwarty koncept zabudowy wnętrza",
       "Możliwość wydzielenia zamykanej kabiny dziobowej",

@@ -110,7 +110,7 @@ export const MainPage = () => {
   };*/
 
   const features = [
-    "Doświadczenie od wielu lat w branży nautycznej",
+    "Doświadczenie od wielu lat w branży żeglarskiej",
     "Najwyższa jakość materiałów i wykonania",
     "Indywidualne podejście do każdego projektu",
     "Certyfikowane procesy produkcyjne",
@@ -134,7 +134,7 @@ export const MainPage = () => {
                 <span>Profesjonalna Produkcja i Transport Jachtów</span>
               </HeroTitle>
               <HeroSubtitle>
-                Lider w dziedzinie kompozytów nautycznych
+                Lider w dziedzinie kompozytów żeglarskich
               </HeroSubtitle>
               <HeroDescription>
                 Specjalizujemy się w produkcji jachtów, transporcie oraz wytwarzaniu 
@@ -173,7 +173,7 @@ export const MainPage = () => {
           >
             <SectionTitle>Nasze Specjalizacje</SectionTitle>
             <SectionSubtitle>
-              Kompleksowe usługi w branży nautycznej i kompozytowej
+              Kompleksowe usługi w branży żeglarskiej i kompozytowej
             </SectionSubtitle>
           </motion.div>
 
@@ -214,7 +214,7 @@ export const MainPage = () => {
               <SectionTitle>O Firmie Jacht Plast</SectionTitle>
               <AboutText>
                 <strong>PHUP Jacht-Plast</strong> to firma z wieloletnim doświadczeniem w branży 
-                nautycznej, specjalizująca się w produkcji jachtów oraz elementów kompozytowych. 
+                żeglarskiej, specjalizująca się w produkcji jachtów oraz elementów kompozytowych. 
                 Nasze zaangażowanie w jakość i innowacje sprawia, że jesteśmy zaufanym partnerem 
                 dla klientów z całej Europy.
               </AboutText>
