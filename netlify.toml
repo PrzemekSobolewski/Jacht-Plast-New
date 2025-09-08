@@ -8,8 +8,10 @@
 
 # Netlify automatycznie wykrywa Next.js i konwertuje API routes na Functions
 [build.environment]
-  # Nie potrzebujemy już omijania skanowania sekretów dla API routes
   NODE_VERSION = "18"
+  # Omijanie skanowania sekretów dla publicznego emaila firmowego
+  SECRETS_SCAN_OMIT_KEYS = "USER_EMAIL,jachtplast@gmail.com"
+  SECRETS_SCAN_ENABLED = "true"
 
 [dev]
   publish = "dist"
