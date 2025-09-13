@@ -64,24 +64,26 @@ import {
 
 // Galeria zdjęć
 const transportImages = [
+  { src: "/images/transport/Transport2.jpeg", alt: "Transport jachtu żaglowego w górach" },
+  { src: "/images/transport/Transport3.jpeg", alt: "Transport jachtu żaglowego Rita" },
+  { src: "/images/transport/Transport7.jpeg", alt: "Transport jachtu żaglowego Rita ujęcie bez gór" },
+  { src: "/images/transport/Transport8.jpeg", alt: "Transport łodzi Galeon ujęcie z góry" },
+  { src: "/images/transport/Transport10.jpeg", alt: "Transport łodzi Galeon" },
+  { src: "/images/transport/Transport4.jpeg", alt: "Transport łodzi Cruiser" },
+  { src: "/images/transport/Transport5.jpeg", alt: "Transport łodzi Navigathor" },
   { src: "/images/transport/1-transport.jpeg", alt: "Transport jachtu żaglowego" },
   { src: "/images/transport/12 - transport.jpeg", alt: "Profesjonalny transport łodzi" },
-  { src: "/images/transport/123-transport.jpeg", alt: "Transport jachtu motorowego" },
   { src: "/images/transport/20170919_101948.webp", alt: "Transport jachtu - wrzesień 2017" },
   { src: "/images/transport/20180811_075157.webp", alt: "Poranek - transport jachtu" },
   { src: "/images/transport/20190304_124020.webp", alt: "Transport jachtu - marzec 2019" },
   { src: "/images/transport/20190410_131058.webp", alt: "Transport jachtu - kwiecień 2019" },
   { src: "/images/transport/20190415_074359.webp", alt: "Wczesny transport - kwiecień 2019" },
   { src: "/images/transport/20190424_134418.webp", alt: "Transport jachtu - kwiecień 2019" },
-  { src: "/images/transport/20190425_085103.webp", alt: "Transport jachtu rano" },
   { src: "/images/transport/20190425_191434.webp", alt: "Transport jachtu wieczorem" },
   { src: "/images/transport/20190425_191515.webp", alt: "Wieczorny transport jachtu" },
-  { src: "/images/transport/20190429_115653.webp", alt: "Transport jachtu - koniec kwietnia" },
   { src: "/images/transport/20190515_073912.webp", alt: "Wczesny transport - maj 2019" },
   { src: "/images/transport/20190523_095858.webp", alt: "Transport jachtu - maj 2019" },
   { src: "/images/transport/20190527_103133.webp", alt: "Transport jachtu - koniec maja" },
-  { src: "/images/transport/20191004_101454.webp", alt: "Transport jachtu - październik 2019" },
-  { src: "/images/transport/20191005_102032.webp", alt: "Transport jachtu - październik 2019" }
 ];
 
 const TransportJachtowComponent = () => {

@@ -38,10 +38,6 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
         <link rel="apple-touch-icon" sizes="180x180" href="/icon.png" />
         <link rel="manifest" href="/manifest.json" />
         
-        {/* Preload kluczowych zasobów */}
-        <link rel="preload" href="/_next/static/css/app.css" as="style" />
-        <link rel="preload" href="/_next/static/chunks/framework.js" as="script" />
-        
         {/* DNS prefetch dla zewnętrznych domen */}
         <link rel="dns-prefetch" href="//www.googletagmanager.com" />
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
