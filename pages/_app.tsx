@@ -33,9 +33,23 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
         <meta name="author" content="Jacht Plast" />
         <meta name="robots" content="index, follow" />
         
-        {/* Favicon */}
-        <link rel="icon" href="/icon.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/icon.png" />
+        {/* Theme colors for browsers */}
+        <meta name="theme-color" content="#2b9bba" />
+        <meta name="msapplication-TileColor" content="#1f4e79" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
+        
+        {/* Preconnect for better performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        
+        {/* Favicon - multiple formats for better compatibility */}
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/icon-16x16.png" sizes="16x16" type="image/png" />
+        <link rel="icon" href="/icon-32x32.png" sizes="32x32" type="image/png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="192x192" href="/icon-192x192.png" />
+        <link rel="apple-touch-icon" sizes="512x512" href="/icon-512x512.png" />
         <link rel="manifest" href="/manifest.json" />
         
         {/* DNS prefetch dla zewnętrznych domen */}
