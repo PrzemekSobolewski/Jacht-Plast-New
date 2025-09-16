@@ -5,7 +5,7 @@ function generateSitemap() {
   
   const staticPages = [
     {
-      url: '/',
+      url: '',
       lastmod: new Date().toISOString(),
       changefreq: 'weekly',
       priority: '1.0'
