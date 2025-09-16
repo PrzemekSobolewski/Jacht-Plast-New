@@ -231,7 +231,7 @@ const LaminatyPage: React.FC = () => {
     "provider": {
       "@type": "Organization",
       "name": "Jacht Plast",
-      "url": "https://jacht-plast.pl"
+      "url": "https://www.jacht-plast.pl"
     },
     "areaServed": "Poland",
     "serviceType": "Manufacturing"
@@ -255,7 +255,7 @@ const LaminatyPage: React.FC = () => {
         <meta property="og:title" content="Laminaty na Zamówienie - Produkcja Kompozytów | Jacht Plast" />
         <meta property="og:description" content="Profesjonalna produkcja laminatów kompozytowych na zamówienie z wieloletnim doświadczeniem" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://jacht-plast.pl/laminaty" />
+        <meta property="og:url" content="https://www.jacht-plast.pl/laminaty" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />

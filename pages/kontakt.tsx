@@ -89,10 +89,10 @@ export default function Kontakt() {
         <meta property="og:title" content="Kontakt - Jacht Plast | Produkcja i Transport Jachtów" />
         <meta property="og:description" content="Skontaktuj się z firmą Jacht Plast. Profesjonalna produkcja jachtów, transport jachtów oraz laminaty kompozytowe." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://jacht-plast.pl/kontakt" />
+        <meta property="og:url" content="https://www.jacht-plast.pl/kontakt" />
         
         {/* Canonical URL */}
-        <link rel="canonical" href="https://jacht-plast.pl/kontakt" />
+        <link rel="canonical" href="https://www.jacht-plast.pl/kontakt" />
         
         {/* Structured Data */}
         <script
@@ -110,7 +110,7 @@ export default function Kontakt() {
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               "name": "PHUP Jacht-Plast",
-              "image": "https://jacht-plast.pl/images/logo.png",
+              "image": "https://www.jacht-plast.pl/images/logo.png",
               "telephone": "+48-601-256-133",
               "email": "jachtplast@gmail.com",
               "address": {

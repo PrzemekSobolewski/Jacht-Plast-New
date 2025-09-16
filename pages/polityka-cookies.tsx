@@ -105,7 +105,7 @@ const PolitykaCookiesPage: React.FC = () => {
     "@type": "WebPage",
     "name": "Polityka Cookies - Jacht Plast",
     "description": "Polityka prywatności i cookies firmy Jacht Plast. Dowiedz się jak wykorzystujemy pliki cookies na naszej stronie.",
-    "url": "https://jacht-plast.pl/polityka-cookies",
+    "url": "https://www.jacht-plast.pl/polityka-cookies",
     "mainEntity": {
       "@type": "Organization",
       "name": "PHUP Jacht-Plast"
@@ -121,7 +121,7 @@ const PolitykaCookiesPage: React.FC = () => {
           content="Polityka prywatności i cookies firmy Jacht Plast. Dowiedz się jak wykorzystujemy pliki cookies i jak zarządzać preferencjami na naszej stronie." 
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://jacht-plast.pl/polityka-cookies" />
+        <link rel="canonical" href="https://www.jacht-plast.pl/polityka-cookies" />
         
         {/* Structured Data */}
         <script

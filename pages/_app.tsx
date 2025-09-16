@@ -32,6 +32,11 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="author" content="Jacht Plast" />
         <meta name="robots" content="index, follow" />
+        <meta name="language" content="pl" />
+        <meta httpEquiv="content-language" content="pl" />
+        
+        {/* Hreflang dla SEO */}
+        <link rel="alternate" hrefLang="pl" href="https://www.jacht-plast.pl" />
         
         {/* Theme colors for browsers */}
         <meta name="theme-color" content="#2b9bba" />

@@ -15,8 +15,8 @@ export default function Home() {
     "@type": "Organization",
     "name": "Jacht Plast",
     "description": "Profesjonalna produkcja jachtów, transport jachtów i produkcja laminatów. Doświadczenie, jakość i niezawodność.",
-    "url": "https://jacht-plast.pl",
-    "logo": "https://jacht-plast.pl/images/logo.png",
+    "url": "https://www.jacht-plast.pl",
+    "logo": "https://www.jacht-plast.pl/images/logo.png",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+48-601-256-133",
@@ -56,18 +56,18 @@ export default function Home() {
         <meta property="og:title" content="Jacht Plast - Produkcja i Transport Jachtów" />
         <meta property="og:description" content="Profesjonalna produkcja jachtów, transport jachtów oraz wytwarzanie laminatów kompozytowych. Doświadczenie od lat." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://jacht-plast.pl" />
-        <meta property="og:image" content="https://jacht-plast.pl/images/logo.png" />
+        <meta property="og:url" content="https://www.jacht-plast.pl" />
+        <meta property="og:image" content="https://www.jacht-plast.pl/images/logo.png" />
         <meta property="og:locale" content="pl_PL" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Jacht Plast - Produkcja i Transport Jachtów" />
         <meta name="twitter:description" content="Profesjonalna produkcja jachtów, transport jachtów oraz wytwarzanie laminatów kompozytowych." />
-        <meta name="twitter:image" content="https://jacht-plast.pl/images/logo.png" />
+        <meta name="twitter:image" content="https://www.jacht-plast.pl/images/logo.png" />
         
         {/* Canonical URL */}
-        <link rel="canonical" href="https://jacht-plast.pl" />
+        <link rel="canonical" href="https://www.jacht-plast.pl" />
         
         {/* Structured Data dla strony głównej */}
         <script

@@ -212,7 +212,7 @@ const TransportJachtowComponent = () => {
     "provider": {
       "@type": "Organization",
       "name": "Jacht Plast",
-      "url": "https://jacht-plast.pl"
+      "url": "https://www.jacht-plast.pl"
     },
     "areaServed": "Europe",
     "serviceType": "Transport"
@@ -236,8 +236,8 @@ const TransportJachtowComponent = () => {
         <meta property="og:title" content="Transport Jachtów - Profesjonalny Transport po Całej Europie" />
         <meta property="og:description" content="Profesjonalny transport jachtów żaglowych i motorowych z pełnym ubezpieczeniem" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://jacht-plast.pl/transport-jachtow" />
-        <meta property="og:image" content="https://jacht-plast.pl/images/transport/1-transport.jpeg" />
+        <meta property="og:url" content="https://www.jacht-plast.pl/transport-jachtow" />
+        <meta property="og:image" content="https://www.jacht-plast.pl/images/transport/1-transport.jpeg" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />

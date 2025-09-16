@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://jacht-plast.pl/sitemap.xml
+Sitemap: https://www.jacht-plast.pl/sitemap.xml
 
 # Disallow crawling of admin areas
 Disallow: /admin/

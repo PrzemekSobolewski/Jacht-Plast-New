@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 function generateSitemap() {
-  const WEBSITE_URL = "https://jacht-plast.pl";
+  const WEBSITE_URL = "https://www.jacht-plast.pl";
   
   const staticPages = [
     {

@@ -11,10 +11,6 @@ const nextConfig = {
   },
   compress: true,
   trailingSlash: true,
-}
-
-module.exports = {
-  ...nextConfig,
   compiler: {
     styledComponents: true
   },
@@ -31,8 +27,8 @@ module.exports = {
         ]
       },
       {
-        // Cache static assets
-        source: '/(.*)',
+        // Cache static assets except HTML
+        source: '/_next/static/(.*)',
         headers: [
           {
             key: 'Cache-Control',
@@ -42,14 +38,7 @@ module.exports = {
       },
     ]
   },
-  exportPathMap: function () {
-        return {
-            '/': {page: '/'},
-            '/produkcja-jachtow.html': {page: '/produkcja-jachtow'},
-            '/transport-jachtow.html': {page: '/transport-jachtow'},
-            '/kontakt.html': {page: '/kontakt'},
-            '/laminaty.html': {page: '/laminaty'},
-            '/polityka-cookies.html': {page: '/polityka-cookies'}
-        }
-    },
+  // ExportPathMap dla statycznego eksportu - usuwamy bo używamy SSR
 }
+
+module.exports = nextConfig;

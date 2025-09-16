@@ -559,7 +559,7 @@ const ProdukcjaJachtowPage: React.FC = () => {
     "provider": {
       "@type": "Organization",
       "name": "Jacht-Plast",
-      "url": "https://jacht-plast.pl"
+      "url": "https://www.jacht-plast.pl"
     },
     "serviceType": "Yacht Manufacturing",
     "areaServed": "Europe",
@@ -591,9 +591,9 @@ const ProdukcjaJachtowPage: React.FC = () => {
         <meta property="og:title" content="Produkcja Jachtów | Luksusowe Jachty Żaglowe i Motorowe | Jacht-Plast" />
         <meta property="og:description" content="Ekskluzywna kolekcja luksusowych jachtów żaglowych i motorowych. Od sportowych cruiserów po jachty oceaniczne." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://jacht-plast.pl/produkcja-jachtow" />
-        <meta property="og:image" content="https://jacht-plast.pl/images/production/navia/1.webp" />
-        <link rel="canonical" href="https://jacht-plast.pl/produkcja-jachtow" />
+        <meta property="og:url" content="https://www.jacht-plast.pl/produkcja-jachtow" />
+        <meta property="og:image" content="https://www.jacht-plast.pl/images/production/navia/1.webp" />
+        <link rel="canonical" href="https://www.jacht-plast.pl/produkcja-jachtow" />
         <script 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

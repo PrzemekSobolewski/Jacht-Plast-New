@@ -133,7 +133,7 @@ const Custom404: React.FC = () => {
           content="Przepraszamy, ale strona której szukasz nie została znaleziona. Wróć na stronę główną Jacht-Plast lub skontaktuj się z nami." 
         />
         <meta name="robots" content="noindex, nofollow" />
-        <link rel="canonical" href="https://jacht-plast.pl" />
+        <link rel="canonical" href="https://www.jacht-plast.pl" />
       </Head>
 
       <ErrorPageContainer>
