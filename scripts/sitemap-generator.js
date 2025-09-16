@@ -5,31 +5,31 @@ function generateSitemap() {
   
   const staticPages = [
     {
-      url: '',
+      url: '/',
       lastmod: new Date().toISOString(),
       changefreq: 'weekly',
       priority: '1.0'
     },
     {
-      url: '/produkcja-jachtow',
+      url: '/produkcja-jachtow/',
       lastmod: new Date().toISOString(),
       changefreq: 'monthly',
       priority: '0.8'
     },
     {
-      url: '/transport-jachtow',
+      url: '/transport-jachtow/',
       lastmod: new Date().toISOString(),
       changefreq: 'monthly',
       priority: '0.8'
     },
     {
-      url: '/laminaty',
+      url: '/laminaty/',
       lastmod: new Date().toISOString(),
       changefreq: 'monthly',
       priority: '0.8'
     },
     {
-      url: '/kontakt',
+      url: '/kontakt/',
       lastmod: new Date().toISOString(),
       changefreq: 'monthly',
       priority: '0.7'
